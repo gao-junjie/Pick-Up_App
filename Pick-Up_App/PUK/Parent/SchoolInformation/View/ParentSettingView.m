@@ -1,17 +1,16 @@
 //
-//  PickerSettingView.m
+//  ParentSettingView.m
 //  PUK
 //
-//  Created by mac on 2022/1/24.
+//  Created by mac on 2022/2/5.
 //
 
-#import "PickerSettingView.h"
+#import "ParentSettingView.h"
 #import "Masonry.h"
 #define SIZE_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SIZE_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
-
-@implementation PickerSettingView
+@implementation ParentSettingView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -88,4 +87,5 @@
     normalCell.textLabel.text = _settingArray[indexPath.row-1];
     return normalCell;
 }
+
 @end

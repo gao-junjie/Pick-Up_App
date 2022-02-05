@@ -19,9 +19,19 @@
 		0449EC3C279EB817005187A5 /* PickerSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449EC3B279EB817005187A5 /* PickerSettingView.m */; };
 		0449EC56279F10FD005187A5 /* zhankai.png in Resources */ = {isa = PBXBuildFile; fileRef = 0449EC54279F10FD005187A5 /* zhankai.png */; };
 		0449EC57279F10FD005187A5 /* shouqi.png in Resources */ = {isa = PBXBuildFile; fileRef = 0449EC55279F10FD005187A5 /* shouqi.png */; };
-		0449EC5C279F1103005187A5 /* pic10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0449EC5B279F1103005187A5 /* pic10.jpg */; };
+		0449EC6427A01063005187A5 /* pic10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0449EC6327A01063005187A5 /* pic10.jpg */; };
 		049AA4E92795E53E00010AFB /* KidPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049AA4E82795E53E00010AFB /* KidPhotoTableViewCell.m */; };
 		049AA4EF27988D0D00010AFB /* KidEmotionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049AA4EE27988D0D00010AFB /* KidEmotionTableViewCell.m */; };
+		04D167A727ABF38B00E8B976 /* SchoolInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D167A627ABF38B00E8B976 /* SchoolInformationView.m */; };
+		04D167B527ACF24F00E8B976 /* pic1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04D167B127ACF24E00E8B976 /* pic1.jpg */; };
+		04D167B627ACF24F00E8B976 /* pic2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04D167B227ACF24E00E8B976 /* pic2.jpg */; };
+		04D167B727ACF24F00E8B976 /* pic3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04D167B327ACF24E00E8B976 /* pic3.jpg */; };
+		04D167B827ACF24F00E8B976 /* pic4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04D167B427ACF24F00E8B976 /* pic4.jpg */; };
+		04D167BD27ACF25A00E8B976 /* pic5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04D167BC27ACF25A00E8B976 /* pic5.jpg */; };
+		04D167C227AE2DE700E8B976 /* laba.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D167C127AE2DE700E8B976 /* laba.png */; };
+		04D167E427AE459A00E8B976 /* SchoolInformationNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D167E327AE459A00E8B976 /* SchoolInformationNewsTableViewCell.m */; };
+		04D167E927AEBC9600E8B976 /* arrow-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D167E827AEBC9600E8B976 /* arrow-right.png */; };
+		04D167F027AEC2CC00E8B976 /* ParentSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D167EF27AEC2CC00E8B976 /* ParentSettingView.m */; };
 		8585951EA3AAA684E3AAD848 /* libPods-PUK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A4772A28DC2159AF596994 /* libPods-PUK.a */; };
 		BCB5B22C279BD948007B78E2 /* SignInView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB5B22B279BD948007B78E2 /* SignInView.m */; };
 		BCB5B235279BDA1F007B78E2 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB5B234279BDA1F007B78E2 /* SignInViewController.m */; };
@@ -81,11 +91,25 @@
 		0449EC3B279EB817005187A5 /* PickerSettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PickerSettingView.m; path = PUK/Picker/EventHandling/View/PickerSettingView.m; sourceTree = SOURCE_ROOT; };
 		0449EC54279F10FD005187A5 /* zhankai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhankai.png; sourceTree = "<group>"; };
 		0449EC55279F10FD005187A5 /* shouqi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shouqi.png; sourceTree = "<group>"; };
-		0449EC5B279F1103005187A5 /* pic10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pic10.jpg; path = ../../../pic10.jpg; sourceTree = "<group>"; };
+		0449EC6327A01063005187A5 /* pic10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pic10.jpg; path = "../../壁纸/pic10.jpg"; sourceTree = "<group>"; };
 		049AA4E72795E53E00010AFB /* KidPhotoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KidPhotoTableViewCell.h; sourceTree = "<group>"; };
 		049AA4E82795E53E00010AFB /* KidPhotoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KidPhotoTableViewCell.m; sourceTree = "<group>"; };
 		049AA4ED27988D0D00010AFB /* KidEmotionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KidEmotionTableViewCell.h; sourceTree = "<group>"; };
 		049AA4EE27988D0D00010AFB /* KidEmotionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KidEmotionTableViewCell.m; sourceTree = "<group>"; };
+		04D167A527ABF38B00E8B976 /* SchoolInformationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SchoolInformationView.h; sourceTree = "<group>"; };
+		04D167A627ABF38B00E8B976 /* SchoolInformationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SchoolInformationView.m; sourceTree = "<group>"; };
+		04D167B027ACF23D00E8B976 /* pic10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic10.jpg; sourceTree = "<group>"; };
+		04D167B127ACF24E00E8B976 /* pic1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic1.jpg; sourceTree = "<group>"; };
+		04D167B227ACF24E00E8B976 /* pic2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic2.jpg; sourceTree = "<group>"; };
+		04D167B327ACF24E00E8B976 /* pic3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic3.jpg; sourceTree = "<group>"; };
+		04D167B427ACF24F00E8B976 /* pic4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic4.jpg; sourceTree = "<group>"; };
+		04D167BC27ACF25A00E8B976 /* pic5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic5.jpg; sourceTree = "<group>"; };
+		04D167C127AE2DE700E8B976 /* laba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laba.png; sourceTree = "<group>"; };
+		04D167E227AE459A00E8B976 /* SchoolInformationNewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SchoolInformationNewsTableViewCell.h; sourceTree = "<group>"; };
+		04D167E327AE459A00E8B976 /* SchoolInformationNewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SchoolInformationNewsTableViewCell.m; sourceTree = "<group>"; };
+		04D167E827AEBC9600E8B976 /* arrow-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-right.png"; sourceTree = "<group>"; };
+		04D167EE27AEC2CC00E8B976 /* ParentSettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ParentSettingView.h; path = PUK/Parent/SchoolInformation/View/ParentSettingView.h; sourceTree = SOURCE_ROOT; };
+		04D167EF27AEC2CC00E8B976 /* ParentSettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ParentSettingView.m; path = PUK/Parent/SchoolInformation/View/ParentSettingView.m; sourceTree = SOURCE_ROOT; };
 		1B4C29C7948AD71EE9718D5B /* Pods-PUK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PUK.debug.xcconfig"; path = "Target Support Files/Pods-PUK/Pods-PUK.debug.xcconfig"; sourceTree = "<group>"; };
 		83A4772A28DC2159AF596994 /* libPods-PUK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PUK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB5B22A279BD948007B78E2 /* SignInView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInView.h; sourceTree = "<group>"; };
@@ -152,8 +176,8 @@
 		04315E68277F53B200C52338 = {
 			isa = PBXGroup;
 			children = (
-				0449EC5B279F1103005187A5 /* pic10.jpg */,
-				0449EC24279D32C4005187A5 /* icon */,
+				0449EC6327A01063005187A5 /* pic10.jpg */,
+				04D167AE27ACF21100E8B976 /* picture */,
 				04315E73277F53B200C52338 /* PUK */,
 				04315E8F277F53B700C52338 /* PUKTests */,
 				04315E9A277F53B700C52338 /* PUKUITests */,
@@ -215,10 +239,55 @@
 		0449EC24279D32C4005187A5 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				04D167C127AE2DE700E8B976 /* laba.png */,
 				0449EC55279F10FD005187A5 /* shouqi.png */,
 				0449EC54279F10FD005187A5 /* zhankai.png */,
+				04D167E827AEBC9600E8B976 /* arrow-right.png */,
 			);
 			path = icon;
+			sourceTree = "<group>";
+		};
+		04D1679B27ABF2C400E8B976 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04D167A527ABF38B00E8B976 /* SchoolInformationView.h */,
+				04D167A627ABF38B00E8B976 /* SchoolInformationView.m */,
+				04D167E227AE459A00E8B976 /* SchoolInformationNewsTableViewCell.h */,
+				04D167E327AE459A00E8B976 /* SchoolInformationNewsTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04D167AE27ACF21100E8B976 /* picture */ = {
+			isa = PBXGroup;
+			children = (
+				04D167B027ACF23D00E8B976 /* pic10.jpg */,
+				04D167AF27ACF22900E8B976 /* ScrollView */,
+				0449EC24279D32C4005187A5 /* icon */,
+			);
+			path = picture;
+			sourceTree = "<group>";
+		};
+		04D167AF27ACF22900E8B976 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				04D167B127ACF24E00E8B976 /* pic1.jpg */,
+				04D167B227ACF24E00E8B976 /* pic2.jpg */,
+				04D167B327ACF24E00E8B976 /* pic3.jpg */,
+				04D167B427ACF24F00E8B976 /* pic4.jpg */,
+				04D167BC27ACF25A00E8B976 /* pic5.jpg */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		04D167ED27AEC27D00E8B976 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04D167EE27AEC2CC00E8B976 /* ParentSettingView.h */,
+				04D167EF27AEC2CC00E8B976 /* ParentSettingView.m */,
+			);
+			name = View;
+			path = Model/PUK/Parent/Setting/Model/View;
 			sourceTree = "<group>";
 		};
 		22BA1296A2479DABA1666CE0 /* Frameworks */ = {
@@ -511,7 +580,7 @@
 			isa = PBXGroup;
 			children = (
 				BCB5B273279C068D007B78E2 /* Model */,
-				BCB5B272279C0688007B78E2 /* View */,
+				04D167ED27AEC27D00E8B976 /* View */,
 				BCB5B271279C0682007B78E2 /* Controller */,
 			);
 			path = Setting;
@@ -521,7 +590,7 @@
 			isa = PBXGroup;
 			children = (
 				BCB5B26D279C05DE007B78E2 /* Model */,
-				BCB5B26C279C05D6007B78E2 /* View */,
+				04D1679B27ABF2C400E8B976 /* View */,
 				BCB5B26B279C05CC007B78E2 /* Controller */,
 			);
 			path = SchoolInformation;
@@ -592,13 +661,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		BCB5B26C279C05D6007B78E2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		BCB5B26D279C05DE007B78E2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,13 +675,6 @@
 				BCB5B275279C06B0007B78E2 /* ParentSettingViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		BCB5B272279C0688007B78E2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		BCB5B273279C068D007B78E2 /* Model */ = {
@@ -880,12 +935,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D167E927AEBC9600E8B976 /* arrow-right.png in Resources */,
 				0449EC57279F10FD005187A5 /* shouqi.png in Resources */,
+				04D167B827ACF24F00E8B976 /* pic4.jpg in Resources */,
 				0449EC56279F10FD005187A5 /* zhankai.png in Resources */,
 				04315E84277F53B600C52338 /* LaunchScreen.storyboard in Resources */,
 				04315E81277F53B600C52338 /* Assets.xcassets in Resources */,
+				04D167B727ACF24F00E8B976 /* pic3.jpg in Resources */,
 				04315E7F277F53B200C52338 /* Main.storyboard in Resources */,
-				0449EC5C279F1103005187A5 /* pic10.jpg in Resources */,
+				04D167B627ACF24F00E8B976 /* pic2.jpg in Resources */,
+				04D167B527ACF24F00E8B976 /* pic1.jpg in Resources */,
+				0449EC6427A01063005187A5 /* pic10.jpg in Resources */,
+				04D167BD27ACF25A00E8B976 /* pic5.jpg in Resources */,
+				04D167C227AE2DE700E8B976 /* laba.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,10 +1012,13 @@
 				0449EC2E279D5A28005187A5 /* PickerNameTableViewCell.m in Sources */,
 				BCB5B292279C7F54007B78E2 /* EventConfirmViewController.m in Sources */,
 				04315E79277F53B200C52338 /* SceneDelegate.m in Sources */,
+				04D167F027AEC2CC00E8B976 /* ParentSettingView.m in Sources */,
+				04D167E427AE459A00E8B976 /* SchoolInformationNewsTableViewCell.m in Sources */,
 				0449EC3C279EB817005187A5 /* PickerSettingView.m in Sources */,
 				049AA4EF27988D0D00010AFB /* KidEmotionTableViewCell.m in Sources */,
 				BCB5B270279C0674007B78E2 /* SchoolInformationViewController.m in Sources */,
 				BCB5B254279C002C007B78E2 /* PickerSettingViewController.m in Sources */,
+				04D167A727ABF38B00E8B976 /* SchoolInformationView.m in Sources */,
 				049AA4E92795E53E00010AFB /* KidPhotoTableViewCell.m in Sources */,
 				BCB5B243279BF9E5007B78E2 /* EventHandlingViewController.m in Sources */,
 				BCB5B285279C0FD3007B78E2 /* KidStateEditingViewController.m in Sources */,
