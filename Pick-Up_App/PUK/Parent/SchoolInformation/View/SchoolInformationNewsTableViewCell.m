@@ -2,7 +2,7 @@
 //  SchoolInformationNewsTableViewCell.m
 //  PUK
 //
-//  Created by mac on 2022/2/5.
+//  Created by 浪极 on 2022/2/6.
 //
 
 #import "SchoolInformationNewsTableViewCell.h"
@@ -25,7 +25,7 @@
         
         _authorTitleNewsLabel = [[UILabel alloc] init];
         _authorTitleNewsLabel.textAlignment = NSTextAlignmentLeft;
-        _authorTitleNewsLabel.textColor = [UIColor blackColor];
+        _authorTitleNewsLabel.textColor = [UIColor colorWithRed:0 green:0.5 blue:0.71 alpha:1];
         _authorTitleNewsLabel.font = [UIFont systemFontOfSize:19];
         [self.contentView addSubview:_authorTitleNewsLabel];
         [_authorTitleNewsLabel sizeToFit];
@@ -38,12 +38,12 @@
         
         _visitNumberNewsLabel = [[UILabel alloc] init];
         _visitNumberNewsLabel.textAlignment = NSTextAlignmentRight;
-        _visitNumberNewsLabel.textColor = [UIColor colorWithRed:0 green:0.4 blue:0.4 alpha:1];
+        _visitNumberNewsLabel.textColor = [UIColor colorWithRed:0 green:0.5 blue:0.71 alpha:1];
         _visitNumberNewsLabel.font = [UIFont systemFontOfSize:16];
         [self.contentView addSubview:_visitNumberNewsLabel];
         
         _lineLabel = [[UILabel alloc] init];
-        _lineLabel.backgroundColor = [UIColor blackColor];
+        _lineLabel.backgroundColor = [UIColor colorWithRed:0 green:0.5 blue:0.71 alpha:1];
         [self.contentView addSubview:_lineLabel];
   
         _photoTitleNewsImageView = [[UIImageView alloc] init];

@@ -2,7 +2,7 @@
 //  SchoolInformationView.h
 //  PUK
 //
-//  Created by mac on 2022/2/3.
+//  Created by 浪极 on 2022/2/6.
 //
 
 #import <UIKit/UIKit.h>
@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel* replayBigWordsLabel;
 @property (nonatomic, strong) UILabel* replayWordsLabel;
 @property (nonatomic, strong) UILabel* newsTitleBigLabel;
+@property (nonatomic, strong) UILabel* scrollViewLineLabel;
 @property (nonatomic, strong) UILabel* firstTipNewsTitleBigLabel;
 @property (nonatomic, strong) UILabel* secondTipNewsTitleBigLabel;
 

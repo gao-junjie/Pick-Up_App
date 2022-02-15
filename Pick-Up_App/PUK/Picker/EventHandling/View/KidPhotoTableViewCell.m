@@ -16,9 +16,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if ([self.reuseIdentifier isEqualToString:@"KidPhoto"]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
+        self.backgroundColor = [UIColor lightGrayColor];
         [self.layer setMasksToBounds:YES];
-        [self.layer setCornerRadius:10];
+        [self.layer setCornerRadius:20];
         
         _schollNameLabel = [[UILabel alloc] init];
         _schollNameLabel.font = [UIFont systemFontOfSize:20];

@@ -2,7 +2,7 @@
 //  PickerNameTableViewCell.h
 //  PUK
 //
-//  Created by mac on 2022/1/23.
+//  Created by 浪极 on 2022/2/6.
 //
 
 #import <UIKit/UIKit.h>
@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PickerNameTableViewCell : UITableViewCell
+
 @property (nonatomic, strong) UILabel* tipLabel;
 @property (nonatomic, strong) UILabel* pickerTimeLabel;
 @property (nonatomic, strong) UILabel* pickerNameLabel;

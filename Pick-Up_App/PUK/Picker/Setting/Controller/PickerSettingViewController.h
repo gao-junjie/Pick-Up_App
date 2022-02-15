@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PickerSettingViewController : UIViewController
+
 @property (nonatomic, strong) PickerSettingView* pickerSettingView;
 
 @end

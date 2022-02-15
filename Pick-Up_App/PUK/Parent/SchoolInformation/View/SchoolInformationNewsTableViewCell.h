@@ -2,7 +2,7 @@
 //  SchoolInformationNewsTableViewCell.h
 //  PUK
 //
-//  Created by mac on 2022/2/5.
+//  Created by 浪极 on 2022/2/6.
 //
 
 #import <UIKit/UIKit.h>
@@ -20,3 +20,4 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+

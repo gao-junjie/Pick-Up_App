@@ -9,14 +9,16 @@
 #import "Masonry.h"
 #import "KidPhotoTableViewCell.h"
 #import "PickerNameTableViewCell.h"
+
 #define SIZE_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SIZE_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 @implementation EventHandlingView
 
+
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    self.backgroundColor = [UIColor yellowColor];
+    self.backgroundColor = [UIColor colorWithRed:0 green:0.5 blue:0.71 alpha:1];
     
     _kidNameListArray = @[@"赵一", @"钱二", @"孙三", @"李四", @"周五", @"吴六", @"郑七", @"王八"];
     _kidNegativeEmotionListArray = @[@"难过", @"痛苦"];
@@ -26,7 +28,7 @@
     
     
     _mainKidTableView = [[UITableView alloc] init];
-    _mainKidTableView.backgroundColor = [UIColor grayColor];
+    _mainKidTableView.backgroundColor = [UIColor whiteColor];
     _mainKidTableView.delegate = self;
     _mainKidTableView.dataSource = self;
     _mainKidTableView.tag = 402;
@@ -113,6 +115,7 @@
     }
     if (indexPath.row == 0) {
         KidPhotoTableViewCell* kidPhotoCell = [_mainKidTableView dequeueReusableCellWithIdentifier:@"KidPhoto" forIndexPath:indexPath];
+        kidPhotoCell.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
         kidPhotoCell.kidPhotoImageView.image = [UIImage imageNamed:@"pic10.jpg"];
         kidPhotoCell.schollNameLabel.text = @"学校：西安邮电小学";
         kidPhotoCell.gradeLabel.text = @"班级：三年二班";
@@ -184,16 +187,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     if (tableView.tag == 401) {
         _selectedArrayNumber = indexPath.row;
         //创建通知
         NSNotification *notification = [NSNotification notificationWithName:@"SelectedKidNameListTableViewCell" object:indexPath userInfo:nil];
         //通过通知中心发送通知
         [[NSNotificationCenter defaultCenter] postNotification:notification];
+        
+    } else if (indexPath.row == 3) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"eventHandlingCell" object:nil];
     }
 }
-
-
 
 @end

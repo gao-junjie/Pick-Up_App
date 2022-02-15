@@ -2,7 +2,7 @@
 //  SchoolInformationView.m
 //  PUK
 //
-//  Created by mac on 2022/2/3.
+//  Created by 浪极 on 2022/2/6.
 //
 
 #import "SchoolInformationView.h"
@@ -38,7 +38,7 @@
     }];
     
     _schoolInformationHeadScrollView = [[UIScrollView alloc] init];
-    _schoolInformationHeadScrollView.backgroundColor = [UIColor blueColor];
+    _schoolInformationHeadScrollView.backgroundColor = [UIColor whiteColor];
     _schoolInformationHeadScrollView.contentSize = CGSizeMake(SIZE_WIDTH * 7, SIZE_HEIGHT * 0.3);
     _schoolInformationHeadScrollView.pagingEnabled = YES;
     _schoolInformationHeadScrollView.showsHorizontalScrollIndicator = NO;
@@ -66,7 +66,7 @@
         UILabel* homeScrollBigLabel = [[UILabel alloc] init];
         homeScrollBigLabel.text = _schoolInformationHeadBigLabelArray[i];
         [homeScrollBigLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:21]];
-        homeScrollBigLabel.textColor = [UIColor whiteColor];
+        homeScrollBigLabel.textColor = [UIColor blackColor];
         homeScrollBigLabel.textAlignment = NSTextAlignmentLeft;
         homeScrollBigLabel.numberOfLines = 1;
         homeScrollBigLabel.backgroundColor = [UIColor clearColor];
@@ -95,7 +95,7 @@
         UILabel* homeScrollBigLabel = [[UILabel alloc] init];
         homeScrollBigLabel.text = _schoolInformationHeadBigLabelArray[i];
         [homeScrollBigLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:21]];
-        homeScrollBigLabel.textColor = [UIColor whiteColor];
+        homeScrollBigLabel.textColor = [UIColor blackColor];
         homeScrollBigLabel.textAlignment = NSTextAlignmentLeft;
         homeScrollBigLabel.numberOfLines = 1;
         homeScrollBigLabel.backgroundColor = [UIColor clearColor];
@@ -107,6 +107,9 @@
             make.height.equalTo(@(SIZE_HEIGHT * 0.05));
         }];
     }
+    
+    _scrollViewLineLabel = [[UILabel alloc] init];
+    _scrollViewLineLabel.backgroundColor = [UIColor colorWithRed:0 green:0.5 blue:0.71 alpha:1];
     
     _pageControl = [[UIPageControl alloc] init];
     _pageControl.pageIndicatorTintColor = [UIColor colorWithWhite:0.8 alpha:0];
@@ -133,16 +136,16 @@
     
     _newsTitleBigLabel = [[UILabel alloc] init];
     _newsTitleBigLabel.text = @"热点";
+    _newsTitleBigLabel.textColor = [UIColor colorWithRed:0 green:0.5 blue:0.71 alpha:1];
     _newsTitleBigLabel.backgroundColor = [UIColor clearColor];
     [_newsTitleBigLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:30]];
     _newsTitleBigLabel.textAlignment = NSTextAlignmentCenter;
     
     _firstTipNewsTitleBigLabel = [[UILabel alloc] init];
-    _firstTipNewsTitleBigLabel.backgroundColor = [UIColor blackColor];
+    _firstTipNewsTitleBigLabel.backgroundColor = [UIColor colorWithRed:0 green:0.5 blue:0.71 alpha:1];
     
     _secondTipNewsTitleBigLabel = [[UILabel alloc] init];
-    _secondTipNewsTitleBigLabel.backgroundColor = [UIColor blackColor];
-        
+    _secondTipNewsTitleBigLabel.backgroundColor = [UIColor colorWithRed:0 green:0.5 blue:0.71 alpha:1];
     return self;
 }
 
@@ -178,6 +181,7 @@
             UITableViewCell* headLineCell = [_schoolInformationMainTableView dequeueReusableCellWithIdentifier:@"HeadLine" forIndexPath:indexPath];
             [headLineCell addSubview:_schoolInformationHeadScrollView];
             [headLineCell addSubview:_pageControl];
+            [headLineCell addSubview:_scrollViewLineLabel];
             
             [_schoolInformationHeadScrollView mas_makeConstraints:^(MASConstraintMaker* make) {
                 make.top.equalTo(@0);
@@ -190,6 +194,12 @@
                 make.centerX.equalTo(headLineCell.mas_centerX).offset(0);
                 make.width.equalTo(@(SIZE_WIDTH));
                 make.height.equalTo(@(SIZE_HEIGHT*0.05));
+            }];
+            [_scrollViewLineLabel mas_makeConstraints:^(MASConstraintMaker* make) {
+                make.bottom.equalTo(headLineCell.mas_bottom).offset(-0.5);
+                make.left.equalTo(headLineCell.mas_left).offset(0);
+                make.width.equalTo(@SIZE_WIDTH);
+                make.height.equalTo(@(0.5));
             }];
             return headLineCell;
             

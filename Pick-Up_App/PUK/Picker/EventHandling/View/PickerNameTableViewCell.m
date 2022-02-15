@@ -2,7 +2,7 @@
 //  PickerNameTableViewCell.m
 //  PUK
 //
-//  Created by mac on 2022/1/23.
+//  Created by 浪极 on 2022/2/6.
 //
 
 #import "PickerNameTableViewCell.h"
@@ -23,7 +23,7 @@
         _tipLabel = [[UILabel alloc] init];
         _tipLabel.font = [UIFont systemFontOfSize:21];
         _tipLabel.text = @"Picker\nToday";
-        _tipLabel.textColor = [UIColor redColor];
+        _tipLabel.textColor = [UIColor colorWithRed:0 green:0.5 blue:0.71 alpha:1];
         _tipLabel.numberOfLines = 0;
         _tipLabel.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:_tipLabel];
@@ -99,7 +99,6 @@
         make.left.equalTo(self.tipLabel.mas_right);
         make.width.equalTo(@(0.5));
     }];
-    
-
 }
+
 @end

@@ -6,7 +6,6 @@
 //
 
 #import "PickerSettingViewController.h"
-#import "PickerSettingView.h"
 
 @interface PickerSettingViewController ()
 
@@ -16,6 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _pickerSettingView = [[PickerSettingView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:_pickerSettingView];
 }
