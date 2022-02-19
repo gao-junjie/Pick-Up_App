@@ -66,6 +66,8 @@
     self.locationManager.distanceFilter = 10;
     [self.locationManager setLocatingWithReGeocode:YES];
     [self.locationManager startUpdatingLocation];
+    //[self addAnnotation];
+    [self pathPlan];
 }
 
 ////添加大头针
@@ -77,6 +79,71 @@
 //    [_mapView addAnnotation:_pointAnnotation];
 //    [_mapView selectAnnotation:_pointAnnotation animated:YES];
 //}
+
+//在回调函数中，获取定位坐标，进行业务处理。
+- (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation {
+    NSLog(@"location:{纬度:%f; 经度:%f;}", userLocation.coordinate.latitude, userLocation.coordinate.longitude);
+}
+
+//解析经纬度
+- (CLLocationCoordinate2D *)coordinatesForString:(NSString *)string
+                            coordinateCount:(NSUInteger *)coordinateCount
+                                parseToken:(NSString *)token {
+    if (string == nil) {
+        return NULL;
+    }
+    if (token == nil) {
+        token = @",";
+    }
+    NSString *str = @"";
+    if (![token isEqualToString:@","]) {
+        str = [string stringByReplacingOccurrencesOfString:token withString:@","];
+    }
+    else {
+        str = [NSString stringWithString:string];
+    }
+    NSArray *components = [str componentsSeparatedByString:@","];
+    NSUInteger count = [components count] / 2;
+    if (coordinateCount != NULL) {
+        *coordinateCount = count;
+    }
+    CLLocationCoordinate2D *coordinates = (CLLocationCoordinate2D*)malloc(count * sizeof(CLLocationCoordinate2D));
+    
+    for (int i = 0; i < count; i++) {
+        coordinates[i].longitude = [[components objectAtIndex:2 * i] doubleValue];
+        coordinates[i].latitude  = [[components objectAtIndex:2 * i + 1] doubleValue];
+    }
+    return coordinates;
+}
+
+//路线解析
+- (NSArray *)polylinesForPath:(AMapPath *)path {
+    if (path == nil || path.steps.count == 0) {
+        return nil;
+    }
+    NSMutableArray *polylines = [NSMutableArray array];
+    [path.steps enumerateObjectsUsingBlock:^(AMapStep *step, NSUInteger idx, BOOL *stop) {
+        NSUInteger count = 0;
+        CLLocationCoordinate2D *coordinates = [self coordinatesForString:step.polyline
+                                                         coordinateCount:&count
+                                                              parseToken:@";"];
+        MAPolyline *polyline = [MAPolyline polylineWithCoordinates:coordinates count:count];
+        [polylines addObject:polyline];
+        (void)((free(coordinates))), coordinates = NULL;
+    }];
+    return polylines;
+}
+
+//路径规划
+- (void)pathPlan {
+    AMapWalkingRouteSearchRequest *navi = [[AMapWalkingRouteSearchRequest alloc] init];
+    /* 出发点. */
+    navi.origin = [AMapGeoPoint locationWithLatitude:_mapView.userLocation.coordinate.latitude longitude:_mapView.userLocation.coordinate.longitude];
+    /* 目的地.默认是西安邮电大学 */
+    navi.destination = [AMapGeoPoint locationWithLatitude:34.15321009064554 longitude:108.90657417790985];
+    //发起路线规划
+    [_searchAPI AMapWalkingRouteSearch:navi];
+}
 
 //实现路径搜索的回调函数
 - (void)onRouteSearchDone:(AMapRouteSearchBaseRequest *)request response:(AMapRouteSearchResponse *)response {
@@ -117,7 +184,8 @@
         polygonView.lineWidth = 8.f;
         polygonView.strokeColor = [UIColor colorWithRed:0.015 green:0.658 blue:0.986 alpha:1.000];
         polygonView.fillColor = [UIColor colorWithRed:0.940 green:0.771 blue:0.143 alpha:0.800];
-        polygonView.lineJoinType = kMALineJoinRound;//连接类型
+        polygonView.lineJoin = kCGLineJoinRound;
+        //polygonView.lineJoinType = kMALineJoinRound;//连接类型
         //返回view，就进行了添加
         return polygonView;
     }

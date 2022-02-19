@@ -9,16 +9,18 @@
 #import <MAMapKit/MAMapKit.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EventCheckingViewController : UIViewController <AMapLocationManagerDelegate, MAMapViewDelegate>
+@interface EventCheckingViewController : UIViewController <AMapLocationManagerDelegate, MAMapViewDelegate, AMapSearchDelegate>
 
 //地图的属性
 @property (nonatomic, strong) MAMapView *mapView;
 
-//
 @property (strong, nonatomic) AMapLocationManager* locationManager;
+@property (strong, nonatomic) AMapSearchAPI* searchAPI;
+@property (strong, nonatomic) AMapTip* tipTemp;
 @property (strong, nonatomic) MAPointAnnotation *pointAnnotation;
 @property (nonatomic, retain) NSArray *pathPolylines;
 @property (nonatomic, assign) BOOL locatingWithReGeocode;
