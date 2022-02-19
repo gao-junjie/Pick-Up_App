@@ -5,6 +5,7 @@ target 'PUK' do
 pod 'Masonry'
 pod 'AMap2DMap' 
 pod 'AMapLocation'
+pod 'AMapSearch'
 
 end
 
