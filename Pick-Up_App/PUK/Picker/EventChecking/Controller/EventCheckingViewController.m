@@ -6,6 +6,9 @@
 //
 
 #import "EventCheckingViewController.h"
+#import "Masonry.h"
+#define SIZE_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SIZE_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 @interface EventCheckingViewController ()
 
@@ -19,7 +22,7 @@
 //    if (@available(iOS 15.0, *)) {
 //        self.view.backgroundColor = [UIColor tintColor];
 //    } else {
-        self.view.backgroundColor = [UIColor yellowColor];
+        self.view.backgroundColor = [UIColor whiteColor];
     //}
     
     [self setMapView];
@@ -27,7 +30,7 @@
 
 - (void)setMapView {
     
-    self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(50, 200, 350, 400)];
+    self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 100, SIZE_WIDTH, SIZE_HEIGHT * 0.9)];
         _mapView.backgroundColor = [UIColor whiteColor];
         self.mapView.delegate = self;
         //设置定位精度

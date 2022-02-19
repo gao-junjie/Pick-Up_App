@@ -3,8 +3,8 @@ platform :ios, '14.0'
 target 'PUK' do
 
 pod 'Masonry'
-
 pod 'AMap2DMap' 
+pod 'AMapLocation'
 
 end
 

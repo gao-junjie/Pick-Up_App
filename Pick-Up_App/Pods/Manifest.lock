@@ -2,23 +2,28 @@ PODS:
   - AMap2DMap (5.6.1):
     - AMapFoundation (~> 1.4)
   - AMapFoundation (1.6.9)
+  - AMapLocation (2.8.0):
+    - AMapFoundation (~> 1.6.9)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
   - AMap2DMap
+  - AMapLocation
   - Masonry
 
 SPEC REPOS:
   trunk:
     - AMap2DMap
     - AMapFoundation
+    - AMapLocation
     - Masonry
 
 SPEC CHECKSUMS:
   AMap2DMap: cac76bc057de18a1641f34df6b50bf5bc6b23571
   AMapFoundation: 8d8ecbb0b2e9ce5487995360d26c885d94642bfd
+  AMapLocation: 5ef44a1117be7dc541cb7a7d43d03c5ee91e4387
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 7be82651fff292b5274e9a5ef4ff3f25e5501996
+PODFILE CHECKSUM: 77d6c47036d2fdec750c95c1a64ba8106608fbbd
 
-COCOAPODS: 1.11.0
+COCOAPODS: 1.11.2

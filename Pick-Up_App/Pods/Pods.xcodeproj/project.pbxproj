@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = AMapFoundation;
+			productName = AMapFoundation;
 		};
 		8628BC7F8FF0BA905278BC233A7C0362 /* AMap2DMap */ = {
 			isa = PBXAggregateTarget;
@@ -25,6 +26,7 @@
 				68006AC6831EFCD933617F645491BAA0 /* PBXTargetDependency */,
 			);
 			name = AMap2DMap;
+			productName = AMap2DMap;
 		};
 /* End PBXAggregateTarget section */
 
@@ -119,7 +121,7 @@
 		3D9B206CBE1752B1A57A43FA79F210EF /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		41B4E49CB472A7E6A5705F1DF5EDE261 /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
 		43BC9506FA2A0BDA3BAE9DFB76283B01 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		486BF69578263324F8938D12B302753C /* Pods-PUK */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-PUK"; path = "libPods-PUK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		486BF69578263324F8938D12B302753C /* libPods-PUK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PUK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4169F3F0619F2CEC6326877C8D2696 /* MAPinAnnotationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAPinAnnotationView.h; path = MAMapKit.framework/Headers/MAPinAnnotationView.h; sourceTree = "<group>"; };
 		4DF6CD013510ACFECEFF48B81B1512B1 /* Pods-PUK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PUK-dummy.m"; sourceTree = "<group>"; };
 		4EF2C7B5E3D29B5E86B058183520FAF6 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
@@ -152,7 +154,7 @@
 		9AA270B25D3266C7FD234D45D724FE7D /* MACircleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MACircleView.h; path = MAMapKit.framework/Headers/MACircleView.h; sourceTree = "<group>"; };
 		9C325144C09BF4E01473FE81F5A616E3 /* MACircle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MACircle.h; path = MAMapKit.framework/Headers/MACircle.h; sourceTree = "<group>"; };
 		9CEBE8426D96EFC5B1D4442688F20E15 /* MAUserLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAUserLocation.h; path = MAMapKit.framework/Headers/MAUserLocation.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E978FEE378A02845622F091BE49CEDE /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		A02E24CBBFB5DC8515722D0EBB20F806 /* MATileOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MATileOverlay.h; path = MAMapKit.framework/Headers/MATileOverlay.h; sourceTree = "<group>"; };
 		A5FADBAF838D895C0CAE2F777B231310 /* MATileOverlayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MATileOverlayView.h; path = MAMapKit.framework/Headers/MATileOverlayView.h; sourceTree = "<group>"; };
@@ -280,7 +282,6 @@
 				D2C902B9211E28A87A4E725A38C00C3F /* Resources */,
 				6E360DACB3C6C01C9F30C2B7AFC77631 /* Support Files */,
 			);
-			name = AMap2DMap;
 			path = AMap2DMap;
 			sourceTree = "<group>";
 		};
@@ -334,7 +335,6 @@
 				8284FC96B81336D45E4CBFE6B0151872 /* ViewController+MASAdditions.m */,
 				55FB84F3B31F893C797135E47209E055 /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -376,7 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				1FFED36A657123030ABB700256D73F15 /* Masonry */,
-				486BF69578263324F8938D12B302753C /* Pods-PUK */,
+				486BF69578263324F8938D12B302753C /* libPods-PUK.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -395,7 +395,6 @@
 				E3C0A896CABE2397983BDA53B244F2F0 /* Frameworks */,
 				AFBA7FC754A2890630E77E760273DE90 /* Support Files */,
 			);
-			name = AMapFoundation;
 			path = AMapFoundation;
 			sourceTree = "<group>";
 		};
@@ -482,7 +481,7 @@
 			);
 			name = "Pods-PUK";
 			productName = "Pods-PUK";
-			productReference = 486BF69578263324F8938D12B302753C /* Pods-PUK */;
+			productReference = 486BF69578263324F8938D12B302753C /* libPods-PUK.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
