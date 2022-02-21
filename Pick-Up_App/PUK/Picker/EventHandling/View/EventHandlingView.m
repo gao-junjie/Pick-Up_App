@@ -29,6 +29,7 @@
     
     _mainKidTableView = [[UITableView alloc] init];
     _mainKidTableView.backgroundColor = [UIColor whiteColor];
+    _mainKidTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _mainKidTableView.delegate = self;
     _mainKidTableView.dataSource = self;
     _mainKidTableView.tag = 402;

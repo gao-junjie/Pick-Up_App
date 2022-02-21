@@ -21,6 +21,7 @@
     
     _schoolInformationMainTableView = [[UITableView alloc] init];
     _schoolInformationMainTableView.backgroundColor = [UIColor whiteColor];
+    _schoolInformationMainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _schoolInformationMainTableView.delegate = self;
     _schoolInformationMainTableView.dataSource = self;
     _schoolInformationMainTableView.tag = 600;

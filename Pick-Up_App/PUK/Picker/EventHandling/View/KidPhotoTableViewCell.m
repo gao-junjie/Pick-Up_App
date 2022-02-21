@@ -18,7 +18,7 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = [UIColor lightGrayColor];
         [self.layer setMasksToBounds:YES];
-        [self.layer setCornerRadius:20];
+        [self.layer setCornerRadius:10];
         
         _schollNameLabel = [[UILabel alloc] init];
         _schollNameLabel.font = [UIFont systemFontOfSize:20];

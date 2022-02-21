@@ -15,7 +15,10 @@
 		04315E87277F53B600C52338 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04315E86277F53B600C52338 /* main.m */; };
 		04315E91277F53B700C52338 /* PUKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04315E90277F53B700C52338 /* PUKTests.m */; };
 		04315E9C277F53B700C52338 /* PUKUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04315E9B277F53B700C52338 /* PUKUITests.m */; };
-		0446F55827B7EF4D00320478 /* fanhui111.png in Resources */ = {isa = PBXBuildFile; fileRef = 0446F55727B7EF4D00320478 /* fanhui111.png */; };
+		0446F5F627C3DEB200320478 /* fanhui111.png in Resources */ = {isa = PBXBuildFile; fileRef = 0446F5F527C3DEB200320478 /* fanhui111.png */; };
+		0446F60627C3DF1800320478 /* PUKLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0446F60327C3DF1700320478 /* PUKLogo.png */; };
+		0446F60727C3DF1800320478 /* backgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0446F60427C3DF1800320478 /* backgroundImage.jpg */; };
+		0446F60827C3DF1800320478 /* PUKTitleLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0446F60527C3DF1800320478 /* PUKTitleLogo.png */; };
 		049AA4E92795E53E00010AFB /* KidPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049AA4E82795E53E00010AFB /* KidPhotoTableViewCell.m */; };
 		049AA4EF27988D0D00010AFB /* KidEmotionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049AA4EE27988D0D00010AFB /* KidEmotionTableViewCell.m */; };
 		254A0A92A1FA5AD660C2D027 /* libPods-PUK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A4772A28DC2159AF596994 /* libPods-PUK.a */; };
@@ -91,7 +94,10 @@
 		04315E97277F53B700C52338 /* PUKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PUKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04315E9B277F53B700C52338 /* PUKUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PUKUITests.m; sourceTree = "<group>"; };
 		04315E9D277F53B700C52338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0446F55727B7EF4D00320478 /* fanhui111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fanhui111.png; sourceTree = "<group>"; };
+		0446F5F527C3DEB200320478 /* fanhui111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fanhui111.png; sourceTree = "<group>"; };
+		0446F60327C3DF1700320478 /* PUKLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PUKLogo.png; sourceTree = "<group>"; };
+		0446F60427C3DF1800320478 /* backgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundImage.jpg; sourceTree = "<group>"; };
+		0446F60527C3DF1800320478 /* PUKTitleLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PUKTitleLogo.png; sourceTree = "<group>"; };
 		049AA4E72795E53E00010AFB /* KidPhotoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KidPhotoTableViewCell.h; sourceTree = "<group>"; };
 		049AA4E82795E53E00010AFB /* KidPhotoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KidPhotoTableViewCell.m; sourceTree = "<group>"; };
 		049AA4ED27988D0D00010AFB /* KidEmotionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KidEmotionTableViewCell.h; sourceTree = "<group>"; };
@@ -829,6 +835,9 @@
 		BCB5B29A279C86AB007B78E2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				0446F60427C3DF1800320478 /* backgroundImage.jpg */,
+				0446F60327C3DF1700320478 /* PUKLogo.png */,
+				0446F60527C3DF1800320478 /* PUKTitleLogo.png */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -836,7 +845,7 @@
 		BCB5B29B279C86B3007B78E2 /* Picker */ = {
 			isa = PBXGroup;
 			children = (
-				0446F55727B7EF4D00320478 /* fanhui111.png */,
+				0446F5F527C3DEB200320478 /* fanhui111.png */,
 				BC991A0E27AFAD8600473A8A /* pic10.jpg */,
 				BC991A1427AFAD8F00473A8A /* pic1.jpg */,
 				BC991A1027AFAD8F00473A8A /* pic2.jpg */,
@@ -969,18 +978,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0446F5F627C3DEB200320478 /* fanhui111.png in Resources */,
 				BC991A1727AFAD8F00473A8A /* pic5.jpg in Resources */,
 				BC991A1827AFAD8F00473A8A /* pic3.jpg in Resources */,
 				BC991A2027AFAD9500473A8A /* shouqi.png in Resources */,
 				BC991A1527AFAD8F00473A8A /* pic2.jpg in Resources */,
+				0446F60727C3DF1800320478 /* backgroundImage.jpg in Resources */,
 				BC991A1927AFAD8F00473A8A /* pic1.jpg in Resources */,
 				BC991A1F27AFAD9500473A8A /* arrow-right.png in Resources */,
-				0446F55827B7EF4D00320478 /* fanhui111.png in Resources */,
 				BC991A2127AFAD9500473A8A /* laba.png in Resources */,
+				0446F60827C3DF1800320478 /* PUKTitleLogo.png in Resources */,
 				BC991A1627AFAD8F00473A8A /* pic4.jpg in Resources */,
 				04315E84277F53B600C52338 /* LaunchScreen.storyboard in Resources */,
 				BC991A0F27AFAD8700473A8A /* pic10.jpg in Resources */,
 				04315E81277F53B600C52338 /* Assets.xcassets in Resources */,
+				0446F60627C3DF1800320478 /* PUKLogo.png in Resources */,
 				BC991A1E27AFAD9500473A8A /* zhankai.png in Resources */,
 				04315E7F277F53B200C52338 /* Main.storyboard in Resources */,
 			);
@@ -1263,7 +1275,7 @@
 					"@executable_path/Frameworks",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = GGGGG.PUK;
+				PRODUCT_BUNDLE_IDENTIFIER = GGGGGG.PUK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1285,7 +1297,7 @@
 					"@executable_path/Frameworks",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = GGGGG.PUK;
+				PRODUCT_BUNDLE_IDENTIFIER = GGGGGG.PUK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

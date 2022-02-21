@@ -137,10 +137,10 @@
 //路径规划
 - (void)pathPlan {
     AMapWalkingRouteSearchRequest *navi = [[AMapWalkingRouteSearchRequest alloc] init];
-    /* 出发点. */
+    /* 出发点 */
     navi.origin = [AMapGeoPoint locationWithLatitude:_mapView.userLocation.coordinate.latitude longitude:_mapView.userLocation.coordinate.longitude];
-    /* 目的地.默认是西安邮电大学 */
-    navi.destination = [AMapGeoPoint locationWithLatitude:34.15321009064554 longitude:108.90657417790985];
+    /* 目的地 */
+    navi.destination = [AMapGeoPoint locationWithLatitude:30.639526945744638 longitude:114.39928272031189];
     //发起路线规划
     [_searchAPI AMapWalkingRouteSearch:navi];
 }

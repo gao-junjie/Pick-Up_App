@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIButton *loginButton;
 @property (nonatomic, strong) UIButton *recoverPasswordButton;
 @property (nonatomic, strong) UIButton *registerButton;
+@property (nonatomic, strong) UIImageView* backgroundImageView;
+@property (nonatomic, strong) UIImageView* logoImageView;
+@property (nonatomic, strong) UIImageView* logoTitleImageView;
 
 @end
 

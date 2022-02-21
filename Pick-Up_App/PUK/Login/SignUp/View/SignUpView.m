@@ -16,6 +16,32 @@
     self = [super initWithFrame:frame];
     self.backgroundColor = [UIColor whiteColor];
     
+    _backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"backgroundImage.jpg"]];
+    [self addSubview:_backgroundImageView];
+    [_backgroundImageView mas_makeConstraints:^(MASConstraintMaker* make) {
+        make.top.equalTo(@0);
+        make.height.equalTo(@(SIZE_HEIGHT));
+        make.left.equalTo(@0);
+        make.width.equalTo(@(SIZE_WIDTH));
+    }];
+    
+    _logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PUKLogo.png"]];
+    [self addSubview:_logoImageView];
+    [_logoImageView mas_makeConstraints:^(MASConstraintMaker* make) {
+        make.top.equalTo(self).offset(SIZE_HEIGHT * 0.08);
+        make.height.equalTo(@(SIZE_HEIGHT * 0.15));
+        make.centerX.equalTo(self.mas_centerX).offset(0);
+        make.width.equalTo(@(SIZE_WIDTH * 0.7));
+    }];
+    
+    _logoTitleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PUKTitleLogo.png"]];
+    [self addSubview:_logoTitleImageView];
+    [_logoTitleImageView mas_makeConstraints:^(MASConstraintMaker* make) {
+        make.top.equalTo(_logoImageView.mas_bottom).offset(SIZE_HEIGHT * 0.02);
+        make.height.equalTo(@(SIZE_HEIGHT * 0.025));
+        make.right.equalTo(self.mas_right).offset(-SIZE_WIDTH * 0.07);
+        make.width.equalTo(@(SIZE_WIDTH * 0.6));
+    }];
     _phoneNumberLabel = [[UILabel alloc] init];
     _phoneNumberLabel.layer.masksToBounds = YES;
     [_phoneNumberLabel.layer setCornerRadius:8];
