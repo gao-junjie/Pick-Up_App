@@ -25,8 +25,6 @@
     _kidPositiveEmotionListArray = @[@"开心", @"成绩好"];
     _selectedArrayNumber = 0;
     
-    
-    
     _mainKidTableView = [[UITableView alloc] init];
     _mainKidTableView.backgroundColor = [UIColor whiteColor];
     _mainKidTableView.separatorStyle = UITableViewCellSeparatorStyleNone;

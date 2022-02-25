@@ -18,18 +18,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
 //    if (@available(iOS 15.0, *)) {
 //        self.view.backgroundColor = [UIColor tintColor];
 //    } else {
         self.view.backgroundColor = [UIColor whiteColor];
     //}
-    
+
     [self setMapView];
 }
 
 - (void)setMapView {
-    
     self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 0, SIZE_WIDTH, SIZE_HEIGHT * 0.9)];
     _mapView.backgroundColor = [UIColor whiteColor];
     self.mapView.delegate = self;
@@ -54,7 +53,11 @@
     //缩放等级
     [_mapView setZoomLevel:18 animated:YES];
     [self.view addSubview:self.mapView];
-    
+
+    _searchAPI = [[AMapSearchAPI alloc] init];
+    _searchAPI.delegate = self;
+
+
     //初始化定位
     [self initLocation];
 }
@@ -108,7 +111,7 @@
         *coordinateCount = count;
     }
     CLLocationCoordinate2D *coordinates = (CLLocationCoordinate2D*)malloc(count * sizeof(CLLocationCoordinate2D));
-    
+
     for (int i = 0; i < count; i++) {
         coordinates[i].longitude = [[components objectAtIndex:2 * i] doubleValue];
         coordinates[i].latitude  = [[components objectAtIndex:2 * i + 1] doubleValue];
@@ -140,7 +143,7 @@
     /* 出发点 */
     navi.origin = [AMapGeoPoint locationWithLatitude:_mapView.userLocation.coordinate.latitude longitude:_mapView.userLocation.coordinate.longitude];
     /* 目的地 */
-    navi.destination = [AMapGeoPoint locationWithLatitude:30.639526945744638 longitude:114.39928272031189];
+    navi.destination = [AMapGeoPoint locationWithLatitude:32.685421 longitude:109.03186];
     //发起路线规划
     [_searchAPI AMapWalkingRouteSearch:navi];
 }
@@ -150,7 +153,7 @@
     if (response.route == nil) {
         return;
     }
- 
+
     //通过AMapNavigationSearchResponse对象处理搜索结果
     NSString *route = [NSString stringWithFormat:@"Navi: %@", response.route];
     NSLog(@"%@", route);
@@ -158,12 +161,12 @@
     AMapStep *step = path.steps[0]; //这个路径上的导航路段数组
     NSLog(@"%@",step.polyline);   //此路段坐标点字符串
     NSLog(@"%@",response.route.paths[0]);
-    
+
     if (response.count > 0) {
         //移除地图原本的遮盖
         [_mapView removeOverlays:_pathPolylines];
         _pathPolylines = nil;
- 
+
         // 只显示第⼀条 规划的路径
         _pathPolylines = [self polylinesForPath:response.route.paths[0]];
         NSLog(@"%@",response.route.paths[0]);
@@ -175,7 +178,7 @@
 //绘制遮盖时执行的代理方法
 - (MAOverlayRenderer *)mapView:(MAMapView *)mapView rendererForOverlay:(id <MAOverlay>)overlay {
     /* 自定义定位精度对应的MACircleView. */
- 
+
     //画路线
     if ([overlay isKindOfClass:[MAPolyline class]]) {
        //初始化一个路线类型的view

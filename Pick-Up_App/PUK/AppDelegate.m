@@ -17,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [AMapServices sharedServices].apiKey = @"d3f9d18b24f42592c22b99e52d387557";
+    //朱方元的key
+    //[AMapServices sharedServices].apiKey = @"d3f9d18b24f42592c22b99e52d387557";
+    //高俊杰的key
+    [AMapServices sharedServices].apiKey = @"a83bec106108a3f73fc116a489f4a6f7";
     
     return YES;
 }

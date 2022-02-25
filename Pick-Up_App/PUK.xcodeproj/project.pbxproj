@@ -15,6 +15,8 @@
 		04315E87277F53B600C52338 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04315E86277F53B600C52338 /* main.m */; };
 		04315E91277F53B700C52338 /* PUKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04315E90277F53B700C52338 /* PUKTests.m */; };
 		04315E9C277F53B700C52338 /* PUKUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04315E9B277F53B700C52338 /* PUKUITests.m */; };
+		043E9B8527C68B4C00400724 /* jiantou.png in Resources */ = {isa = PBXBuildFile; fileRef = 043E9B8427C68B4C00400724 /* jiantou.png */; };
+		043E9BAB27C7DD6200400724 /* fanhui.png in Resources */ = {isa = PBXBuildFile; fileRef = 043E9BAA27C7DD6200400724 /* fanhui.png */; };
 		0446F5F627C3DEB200320478 /* fanhui111.png in Resources */ = {isa = PBXBuildFile; fileRef = 0446F5F527C3DEB200320478 /* fanhui111.png */; };
 		0446F60627C3DF1800320478 /* PUKLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0446F60327C3DF1700320478 /* PUKLogo.png */; };
 		0446F60727C3DF1800320478 /* backgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0446F60427C3DF1800320478 /* backgroundImage.jpg */; };
@@ -94,6 +96,8 @@
 		04315E97277F53B700C52338 /* PUKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PUKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04315E9B277F53B700C52338 /* PUKUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PUKUITests.m; sourceTree = "<group>"; };
 		04315E9D277F53B700C52338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		043E9B8427C68B4C00400724 /* jiantou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiantou.png; sourceTree = "<group>"; };
+		043E9BAA27C7DD6200400724 /* fanhui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fanhui.png; sourceTree = "<group>"; };
 		0446F5F527C3DEB200320478 /* fanhui111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fanhui111.png; sourceTree = "<group>"; };
 		0446F60327C3DF1700320478 /* PUKLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PUKLogo.png; sourceTree = "<group>"; };
 		0446F60427C3DF1800320478 /* backgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundImage.jpg; sourceTree = "<group>"; };
@@ -838,6 +842,8 @@
 				0446F60427C3DF1800320478 /* backgroundImage.jpg */,
 				0446F60327C3DF1700320478 /* PUKLogo.png */,
 				0446F60527C3DF1800320478 /* PUKTitleLogo.png */,
+				043E9B8427C68B4C00400724 /* jiantou.png */,
+				043E9BAA27C7DD6200400724 /* fanhui.png */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -984,12 +990,14 @@
 				BC991A2027AFAD9500473A8A /* shouqi.png in Resources */,
 				BC991A1527AFAD8F00473A8A /* pic2.jpg in Resources */,
 				0446F60727C3DF1800320478 /* backgroundImage.jpg in Resources */,
+				043E9B8527C68B4C00400724 /* jiantou.png in Resources */,
 				BC991A1927AFAD8F00473A8A /* pic1.jpg in Resources */,
 				BC991A1F27AFAD9500473A8A /* arrow-right.png in Resources */,
 				BC991A2127AFAD9500473A8A /* laba.png in Resources */,
 				0446F60827C3DF1800320478 /* PUKTitleLogo.png in Resources */,
 				BC991A1627AFAD8F00473A8A /* pic4.jpg in Resources */,
 				04315E84277F53B600C52338 /* LaunchScreen.storyboard in Resources */,
+				043E9BAB27C7DD6200400724 /* fanhui.png in Resources */,
 				BC991A0F27AFAD8700473A8A /* pic10.jpg in Resources */,
 				04315E81277F53B600C52338 /* Assets.xcassets in Resources */,
 				0446F60627C3DF1800320478 /* PUKLogo.png in Resources */,
@@ -1269,7 +1277,7 @@
 				DEVELOPMENT_TEAM = 79X9GJM4FD;
 				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = PUK/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1291,7 +1299,7 @@
 				DEVELOPMENT_TEAM = 79X9GJM4FD;
 				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = PUK/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
