@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SignUpViewController : UIViewController
+@interface SignUpViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) SignUpView *signUpView;
 @property (nonatomic, strong) SignInViewController *signInViewController;

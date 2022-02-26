@@ -13,7 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIButton *signUpReturnButton;
 @property (nonatomic, strong) UIButton *signUpNextButton;
+@property (nonatomic, strong) UIButton *signUpNextTwiceButton;
 @property (nonatomic, strong) UIButton *verificationCodeButton;
+@property (nonatomic, strong) UIButton *selectPickerButton;
+@property (nonatomic, strong) UIButton *selectParentButton;
+@property (nonatomic, strong) UIButton *selectTeacherButton;
 @property (nonatomic, strong) UITextField *phoneNumberTextField;
 @property (nonatomic, strong) UITextField *validationTextField;
 @property (nonatomic, strong) UITextField *passwordNextTextField;
@@ -22,9 +26,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *validationLabel;
 @property (nonatomic, strong) UILabel *passwordNextLabel;
 @property (nonatomic, strong) UILabel *nameNextLabel;
+@property (nonatomic, strong) UILabel *wrongNameAlertLabel;
 @property (nonatomic, strong) UIImageView* backgroundImageView;
 @property (nonatomic, strong) UIImageView* logoImageView;
 @property (nonatomic, strong) UIImageView* logoTitleImageView;
+@property (nonatomic, strong) NSString* nameString;
+@property (nonatomic, strong) NSString* passwordString;
 @property (nonatomic, assign) NSUInteger countTimerNumberDown;
 @property (nonatomic, retain) NSTimer* countDownTimer;
 
