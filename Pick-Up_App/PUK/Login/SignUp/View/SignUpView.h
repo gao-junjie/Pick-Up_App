@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *passwordNextLabel;
 @property (nonatomic, strong) UILabel *nameNextLabel;
 @property (nonatomic, strong) UILabel *wrongNameAlertLabel;
+@property (nonatomic, strong) UIImageView* signUpImageView;
 @property (nonatomic, strong) UIImageView* backgroundImageView;
 @property (nonatomic, strong) UIImageView* logoImageView;
 @property (nonatomic, strong) UIImageView* logoTitleImageView;

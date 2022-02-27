@@ -17,6 +17,10 @@
 		04315E9C277F53B700C52338 /* PUKUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04315E9B277F53B700C52338 /* PUKUITests.m */; };
 		043E9B8527C68B4C00400724 /* jiantou.png in Resources */ = {isa = PBXBuildFile; fileRef = 043E9B8427C68B4C00400724 /* jiantou.png */; };
 		043E9BAB27C7DD6200400724 /* fanhui.png in Resources */ = {isa = PBXBuildFile; fileRef = 043E9BAA27C7DD6200400724 /* fanhui.png */; };
+		043E9BB627CA70F300400724 /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 043E9BB527CA70F300400724 /* signUp.png */; };
+		043E9BBE27CA746200400724 /* retrievePassword.png in Resources */ = {isa = PBXBuildFile; fileRef = 043E9BBD27CA746200400724 /* retrievePassword.png */; };
+		043E9BC827CA753200400724 /* RetrievePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E9BC727CA753200400724 /* RetrievePasswordViewController.m */; };
+		043E9BCE27CA754200400724 /* RetrievePasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E9BCD27CA754200400724 /* RetrievePasswordView.m */; };
 		0446F5F627C3DEB200320478 /* fanhui111.png in Resources */ = {isa = PBXBuildFile; fileRef = 0446F5F527C3DEB200320478 /* fanhui111.png */; };
 		0446F60627C3DF1800320478 /* PUKLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0446F60327C3DF1700320478 /* PUKLogo.png */; };
 		0446F60727C3DF1800320478 /* backgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0446F60427C3DF1800320478 /* backgroundImage.jpg */; };
@@ -98,6 +102,12 @@
 		04315E9D277F53B700C52338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		043E9B8427C68B4C00400724 /* jiantou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiantou.png; sourceTree = "<group>"; };
 		043E9BAA27C7DD6200400724 /* fanhui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fanhui.png; sourceTree = "<group>"; };
+		043E9BB527CA70F300400724 /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUp.png; sourceTree = "<group>"; };
+		043E9BBD27CA746200400724 /* retrievePassword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retrievePassword.png; sourceTree = "<group>"; };
+		043E9BC627CA753200400724 /* RetrievePasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RetrievePasswordViewController.h; sourceTree = "<group>"; };
+		043E9BC727CA753200400724 /* RetrievePasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RetrievePasswordViewController.m; sourceTree = "<group>"; };
+		043E9BCC27CA754200400724 /* RetrievePasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RetrievePasswordView.h; sourceTree = "<group>"; };
+		043E9BCD27CA754200400724 /* RetrievePasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RetrievePasswordView.m; sourceTree = "<group>"; };
 		0446F5F527C3DEB200320478 /* fanhui111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fanhui111.png; sourceTree = "<group>"; };
 		0446F60327C3DF1700320478 /* PUKLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PUKLogo.png; sourceTree = "<group>"; };
 		0446F60427C3DF1800320478 /* backgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundImage.jpg; sourceTree = "<group>"; };
@@ -260,6 +270,41 @@
 			path = PUKUITests;
 			sourceTree = "<group>";
 		};
+		043E9BC227CA74E600400724 /* RetrievePassword */ = {
+			isa = PBXGroup;
+			children = (
+				043E9BC527CA751800400724 /* Model */,
+				043E9BC427CA751200400724 /* View */,
+				043E9BC327CA750600400724 /* Controller */,
+			);
+			path = RetrievePassword;
+			sourceTree = "<group>";
+		};
+		043E9BC327CA750600400724 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				043E9BC627CA753200400724 /* RetrievePasswordViewController.h */,
+				043E9BC727CA753200400724 /* RetrievePasswordViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		043E9BC427CA751200400724 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				043E9BCC27CA754200400724 /* RetrievePasswordView.h */,
+				043E9BCD27CA754200400724 /* RetrievePasswordView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		043E9BC527CA751800400724 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		22BA1296A2479DABA1666CE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +370,7 @@
 			children = (
 				BCB5B226279BD6B8007B78E2 /* SignUp */,
 				BCB5B225279BD6AF007B78E2 /* SignIn */,
+				043E9BC227CA74E600400724 /* RetrievePassword */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -844,6 +890,8 @@
 				0446F60527C3DF1800320478 /* PUKTitleLogo.png */,
 				043E9B8427C68B4C00400724 /* jiantou.png */,
 				043E9BAA27C7DD6200400724 /* fanhui.png */,
+				043E9BB527CA70F300400724 /* signUp.png */,
+				043E9BBD27CA746200400724 /* retrievePassword.png */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1000,7 +1048,9 @@
 				043E9BAB27C7DD6200400724 /* fanhui.png in Resources */,
 				BC991A0F27AFAD8700473A8A /* pic10.jpg in Resources */,
 				04315E81277F53B600C52338 /* Assets.xcassets in Resources */,
+				043E9BB627CA70F300400724 /* signUp.png in Resources */,
 				0446F60627C3DF1800320478 /* PUKLogo.png in Resources */,
+				043E9BBE27CA746200400724 /* retrievePassword.png in Resources */,
 				BC991A1E27AFAD9500473A8A /* zhankai.png in Resources */,
 				04315E7F277F53B200C52338 /* Main.storyboard in Resources */,
 			);
@@ -1075,6 +1125,7 @@
 				BCB5B295279C7FCE007B78E2 /* SchoolInformationEditingViewController.m in Sources */,
 				BCB5B249279BFAA0007B78E2 /* EventCheckingViewController.m in Sources */,
 				BC9919F927AC479300473A8A /* SpecificEventViewController.m in Sources */,
+				043E9BC827CA753200400724 /* RetrievePasswordViewController.m in Sources */,
 				BC991A2A27AFB13F00473A8A /* SchoolInformationNewsTableViewCell.m in Sources */,
 				BCB5B235279BDA1F007B78E2 /* SignInViewController.m in Sources */,
 				BCB5B276279C06B0007B78E2 /* ParentSettingViewController.m in Sources */,
@@ -1099,6 +1150,7 @@
 				BCB5B243279BF9E5007B78E2 /* EventHandlingViewController.m in Sources */,
 				BCB5B285279C0FD3007B78E2 /* KidStateEditingViewController.m in Sources */,
 				BCB5B22C279BD948007B78E2 /* SignInView.m in Sources */,
+				043E9BCE27CA754200400724 /* RetrievePasswordView.m in Sources */,
 				BC991A2727AFB0DA00473A8A /* SchoolInformationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

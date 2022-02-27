@@ -26,7 +26,7 @@
 
 
 - (void)pressSignUpReturnButton {
-    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 //验证码倒计时
@@ -78,7 +78,7 @@
         [boomAlert addAction:boomAction];
         [self presentViewController:boomAlert animated:YES completion:nil];
     } else {
-        [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     }
     
     

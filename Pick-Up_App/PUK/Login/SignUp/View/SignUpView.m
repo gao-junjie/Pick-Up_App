@@ -16,6 +16,7 @@
     self = [super initWithFrame:frame];
     self.backgroundColor = [UIColor whiteColor];
     
+    
     _backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"backgroundImage.jpg"]];
     [self addSubview:_backgroundImageView];
     [_backgroundImageView mas_makeConstraints:^(MASConstraintMaker* make) {
@@ -41,6 +42,15 @@
         make.height.equalTo(@(SIZE_HEIGHT * 0.025));
         make.right.equalTo(self.mas_right).offset(-SIZE_WIDTH * 0.07);
         make.width.equalTo(@(SIZE_WIDTH * 0.6));
+    }];
+    
+    _signUpImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signUp.png"]];
+    [self addSubview:_signUpImageView];
+    [_signUpImageView mas_makeConstraints:^(MASConstraintMaker* make) {
+        make.top.equalTo(_logoTitleImageView.mas_bottom).offset(SIZE_HEIGHT * 0.04);
+        make.height.equalTo(@(SIZE_HEIGHT * 0.05));
+        make.centerX.equalTo(self.mas_centerX).offset(0);
+        make.width.equalTo(@(SIZE_WIDTH * 0.2));
     }];
     
     _signUpReturnButton = [UIButton buttonWithType:UIButtonTypeCustom];

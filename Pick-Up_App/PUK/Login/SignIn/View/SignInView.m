@@ -51,7 +51,7 @@
     [_usernameLabel mas_makeConstraints:^(MASConstraintMaker* make) {
         make.top.equalTo(self.mas_centerY).offset(-SIZE_HEIGHT * 0.1);
         make.height.equalTo(@(SIZE_HEIGHT * 0.052));
-        make.centerX.equalTo(self.mas_centerX).offset(0);
+        make.centerX.equalTo(self.mas_centerX).offset(-SIZE_WIDTH*0.85);
         make.width.equalTo(@(SIZE_WIDTH * 0.7));
     }];
     
@@ -63,7 +63,7 @@
     [_passwordLabel mas_makeConstraints:^(MASConstraintMaker* make) {
         make.top.equalTo(self.usernameLabel.mas_bottom).offset(SIZE_HEIGHT * 0.03);
         make.height.equalTo(@(SIZE_HEIGHT * 0.052));
-        make.centerX.equalTo(self.mas_centerX).offset(0);
+        make.centerX.equalTo(self.mas_centerX).offset(-SIZE_WIDTH*0.85);
         make.width.equalTo(@(SIZE_WIDTH * 0.7));
     }];
     
@@ -103,7 +103,7 @@
     [_usernameTextField mas_makeConstraints:^(MASConstraintMaker* make) {
         make.top.equalTo(self.usernameLabel.mas_top).offset(SIZE_HEIGHT*0.003);
         make.height.equalTo(@(SIZE_HEIGHT * 0.045));
-        make.centerX.equalTo(self.mas_centerX).offset(0);
+        make.centerX.equalTo(self.mas_centerX).offset(-SIZE_WIDTH * 0.81);
         make.width.equalTo(@(SIZE_WIDTH * 0.62));
     }];
     
@@ -117,7 +117,7 @@
     [_passwordTextField mas_makeConstraints:^(MASConstraintMaker* make) {
         make.top.equalTo(self.passwordLabel.mas_top).offset(SIZE_HEIGHT * 0.003);
         make.height.equalTo(@(SIZE_HEIGHT * 0.045));
-        make.centerX.equalTo(self.mas_centerX).offset(0);
+        make.centerX.equalTo(self.mas_centerX).offset(-SIZE_WIDTH * 0.81);
         make.width.equalTo(@(SIZE_WIDTH * 0.62));
     }];
     
@@ -133,6 +133,7 @@
     
     _loginButtonImageView = [[UIImageView alloc] init];
     _loginButtonImageView.backgroundColor = [UIColor colorWithRed:0 green:0.38 blue:0.9 alpha:0.95];
+    _loginButtonImageView.alpha = 0;
     _loginButtonImageView.layer.masksToBounds = YES;
     [_loginButtonImageView.layer setCornerRadius:SIZE_WIDTH * 0.1];
     [self addSubview:_loginButtonImageView];
@@ -142,17 +143,17 @@
         make.centerX.equalTo(self.mas_centerX).offset(0);
         make.width.equalTo(@(SIZE_WIDTH * 0.2));
     }];
-    
     _tapGesturRecognizer = [[UITapGestureRecognizer alloc] init];
     [_loginButtonImageView addGestureRecognizer:_tapGesturRecognizer];
     _loginButtonImageView.userInteractionEnabled = YES;
+    
     
     _loginArrowImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"jiantou.png"]];
     [self addSubview:_loginArrowImageView];
     [_loginArrowImageView mas_makeConstraints:^(MASConstraintMaker* make) {
         make.centerY.equalTo(_loginButtonImageView.mas_centerY).offset(0);
         make.height.equalTo(@(SIZE_WIDTH * 0.1));
-        make.centerX.equalTo(self.mas_centerX).offset(0);
+        make.centerX.equalTo(self.mas_centerX).offset(-SIZE_WIDTH * 0.55);
         make.width.equalTo(@(SIZE_WIDTH * 0.1));
     }];
     
