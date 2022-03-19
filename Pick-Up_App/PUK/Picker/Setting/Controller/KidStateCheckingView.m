@@ -1,11 +1,11 @@
 //
-//  EventHandlingView.m
+//  KidStateCheckingView.m
 //  PUK
 //
-//  Created by 浪极 on 2022/1/22.
+//  Created by mac on 2022/3/12.
 //
 
-#import "EventHandlingView.h"
+#import "KidStateCheckingView.h"
 #import "Masonry.h"
 #import "KidPhotoTableViewCell.h"
 #import "PickerNameTableViewCell.h"
@@ -13,12 +13,11 @@
 #define SIZE_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SIZE_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
-@implementation EventHandlingView
-
+@implementation KidStateCheckingView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    self.backgroundColor = [UIColor colorWithRed:0 green:0.5 blue:0.71 alpha:1];
+    self.backgroundColor = [UIColor colorWithRed:0.7 green:0.5 blue:0.2 alpha:1];
     
     _kidNameListArray = @[@"赵一", @"钱二", @"孙三", @"李四", @"周五", @"吴六", @"郑七", @"王八"];
     _kidNegativeEmotionListArray = @[@"难过", @"痛苦"];
@@ -33,6 +32,7 @@
     _mainKidTableView.tag = 402;
     [_mainKidTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"normal"];
     [_mainKidTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"EmotionCell"];
+    [_mainKidTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"PickerNameCell"];
     [_mainKidTableView registerClass:[KidPhotoTableViewCell class] forCellReuseIdentifier:@"KidPhoto"];
     [_mainKidTableView registerClass:[PickerNameTableViewCell class] forCellReuseIdentifier:@"KidPickerInfomation"];
     [self addSubview:_mainKidTableView];
@@ -79,51 +79,11 @@
     _mainEmotionLabel.textAlignment = NSTextAlignmentCenter;
     _mainEmotionLabel.numberOfLines = 0;
     
-    _startLabel = [[UILabel alloc] init];
-    _startLabel.text = @"出发";
-    _startLabel.textAlignment = NSTextAlignmentCenter;
-    _startLabel.hidden = NO;
-    _startLabel.textColor = [UIColor grayColor];
-    _startLabel.font = [UIFont systemFontOfSize:22];
+    _firstPickerNameTipLabel = [[UILabel alloc] init];
+    _firstPickerNameTipLabel.backgroundColor = [UIColor blackColor];
     
-    _movingSchoolLabel = [[UILabel alloc] init];
-    _movingSchoolLabel.text = @"正在前往学校";
-    _movingSchoolLabel.hidden = YES;
-    _movingSchoolLabel.textAlignment = NSTextAlignmentCenter;
-    _movingSchoolLabel.textColor = [UIColor grayColor];
-    _movingSchoolLabel.font = [UIFont systemFontOfSize:22];
-    
-    _arriveSchoolLabel = [[UILabel alloc] init];
-    _arriveSchoolLabel.text = @"已到达学校";
-    _arriveSchoolLabel.hidden = YES;
-    _arriveSchoolLabel.textAlignment = NSTextAlignmentCenter;
-    _arriveSchoolLabel.textColor = [UIColor grayColor];
-    _arriveSchoolLabel.font = [UIFont systemFontOfSize:22];
-    
-    _movingHomeLabel = [[UILabel alloc] init];
-    _movingHomeLabel.text = @"正在前往最终位置";
-    _movingHomeLabel.hidden = YES;
-    _movingHomeLabel.textAlignment = NSTextAlignmentCenter;
-    _movingHomeLabel.textColor = [UIColor grayColor];
-    _movingHomeLabel.font = [UIFont systemFontOfSize:22];
-    
-    _arriveHomeLabel = [[UILabel alloc] init];
-    _arriveHomeLabel.text = @"已到达最终位置";
-    _arriveHomeLabel.hidden = YES;
-    _arriveHomeLabel.textAlignment = NSTextAlignmentCenter;
-    _arriveHomeLabel.textColor = [UIColor grayColor];
-    _arriveHomeLabel.font = [UIFont systemFontOfSize:22];
-    
-    _firstLineLabel = [[UILabel alloc] init];
-    _firstLineLabel.hidden = NO;
-    _firstLineLabel.backgroundColor = [UIColor grayColor];
-    
-    _secondLineLabel = [[UILabel alloc] init];
-    _secondLineLabel.hidden = YES;
-    _secondLineLabel.backgroundColor = [UIColor grayColor];
-    
-    _scanQRCodesButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_scanQRCodesButton setImage:[UIImage imageNamed:@"daodiansaomaqueren.png"] forState:UIControlStateNormal];
+    _secondPickerNameTipLabel = [[UILabel alloc] init];
+    _secondPickerNameTipLabel.backgroundColor = [UIColor blackColor];
     
     
     return self;
@@ -148,9 +108,9 @@
     } else if (indexPath.row == 1) {
         return SIZE_HEIGHT * 0.14;
     } else if (indexPath.row == 2) {
-        return SIZE_HEIGHT * 0.18;
+        return SIZE_HEIGHT * 0.06;
     } else {
-        return SIZE_HEIGHT * 0.22;
+        return SIZE_HEIGHT * 0.18;
     }
 }
 
@@ -220,6 +180,38 @@
         }
         return emotionCell;
     } else if (indexPath.row == 2) {
+        UITableViewCell* pickerNameCell = [_mainKidTableView dequeueReusableCellWithIdentifier:@"PickerNameCell" forIndexPath:indexPath];
+        pickerNameCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        UILabel* pickerNameLabel = [[UILabel alloc] init];
+        pickerNameLabel.text = @"Picker的信息";
+        pickerNameLabel.textAlignment = NSTextAlignmentCenter;
+        pickerNameLabel.textColor = [UIColor blackColor];
+        pickerNameLabel.font = [UIFont systemFontOfSize:25];
+        [pickerNameCell.contentView addSubview:pickerNameLabel];
+        [pickerNameLabel mas_makeConstraints:^(MASConstraintMaker* make) {
+            make.top.equalTo(pickerNameCell.mas_top).offset(0);
+            make.bottom.equalTo(pickerNameCell.mas_bottom).offset(0);
+            make.centerX.equalTo(pickerNameCell.mas_centerX).offset(0);
+            make.width.equalTo(@(SIZE_WIDTH));
+        }];
+        [pickerNameCell.contentView addSubview:_firstPickerNameTipLabel];
+        [_firstPickerNameTipLabel mas_makeConstraints:^(MASConstraintMaker* make) {
+            make.top.equalTo(@0);
+            make.left.equalTo(@0);
+            make.width.equalTo(@(SIZE_WIDTH));
+            make.height.equalTo(@0.5);
+        }];
+        [pickerNameCell.contentView addSubview:_secondPickerNameTipLabel];
+        [_secondPickerNameTipLabel mas_makeConstraints:^(MASConstraintMaker* make) {
+            make.bottom.equalTo(@0);
+            make.left.equalTo(@0);
+            make.width.equalTo(@(SIZE_WIDTH));
+            make.height.equalTo(@0.5);
+        }];
+        
+        return pickerNameCell;
+    } else if (indexPath.row == 3) {
         PickerNameTableViewCell* pickerInfomationCell = [_mainKidTableView dequeueReusableCellWithIdentifier:@"KidPickerInfomation" forIndexPath:indexPath];
         pickerInfomationCell.pickerLocationLabel.text = @"位置：子午大道";
         pickerInfomationCell.pickerNameLabel.text = @"Picker：接送者";
@@ -229,75 +221,8 @@
         return pickerInfomationCell;
     }
 
-    UITableViewCell* pickerProcessCell = [_mainKidTableView dequeueReusableCellWithIdentifier:@"normal" forIndexPath:indexPath];
-    pickerProcessCell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [pickerProcessCell addSubview:_startLabel];
-    [_startLabel mas_makeConstraints:^(MASConstraintMaker* make) {
-        make.top.equalTo(pickerProcessCell.mas_top).offset(SIZE_HEIGHT * 0.02);
-        make.height.equalTo(@(SIZE_HEIGHT * 0.02));
-        make.left.equalTo(pickerProcessCell.mas_left).offset(0);
-        make.width.equalTo(@(SIZE_WIDTH * 0.5));
-    }];
-    
-    [pickerProcessCell addSubview:_firstLineLabel];
-    [_firstLineLabel mas_makeConstraints:^(MASConstraintMaker* make) {
-        make.top.equalTo(_startLabel.mas_bottom).offset(SIZE_HEIGHT * 0.01);
-        make.height.equalTo(@(SIZE_HEIGHT * 0.04));
-        make.centerX.equalTo(_startLabel.mas_centerX).offset(0);
-        make.width.equalTo(@(1));
-    }];
-    
-    
-    [pickerProcessCell addSubview:_movingSchoolLabel];
-    [_movingSchoolLabel mas_makeConstraints:^(MASConstraintMaker* make) {
-        make.top.equalTo(_firstLineLabel.mas_bottom).offset(SIZE_HEIGHT * 0.01);
-        make.height.equalTo(@(SIZE_HEIGHT * 0.02));
-        make.centerX.equalTo(_startLabel.mas_centerX).offset(0);
-        make.width.equalTo(@(SIZE_WIDTH * 0.5));
-    }];
-    
-    [pickerProcessCell addSubview:_arriveSchoolLabel];
-    [_arriveSchoolLabel mas_makeConstraints:^(MASConstraintMaker* make) {
-        make.top.equalTo(_firstLineLabel.mas_bottom).offset(SIZE_HEIGHT * 0.01);
-        make.height.equalTo(@(SIZE_HEIGHT * 0.02));
-        make.centerX.equalTo(_startLabel.mas_centerX).offset(0);
-        make.width.equalTo(@(SIZE_WIDTH * 0.5));
-    }];
-    
-    [pickerProcessCell addSubview:_secondLineLabel];
-    [_secondLineLabel mas_makeConstraints:^(MASConstraintMaker* make) {
-        make.top.equalTo(_movingSchoolLabel.mas_bottom).offset(SIZE_HEIGHT * 0.01);
-        make.height.equalTo(@(SIZE_HEIGHT * 0.04));
-        make.centerX.equalTo(_startLabel.mas_centerX).offset(0);
-        make.width.equalTo(@(1));
-    }];
-    
-    
-    [pickerProcessCell addSubview:_movingHomeLabel];
-    [_movingHomeLabel mas_makeConstraints:^(MASConstraintMaker* make) {
-        make.top.equalTo(_secondLineLabel.mas_bottom).offset(SIZE_HEIGHT * 0.01);
-        make.height.equalTo(@(SIZE_HEIGHT * 0.02));
-        make.centerX.equalTo(_startLabel.mas_centerX).offset(0);
-        make.width.equalTo(@(SIZE_WIDTH * 0.5));
-    }];
-    
-    [pickerProcessCell addSubview:_arriveHomeLabel];
-    [_arriveHomeLabel mas_makeConstraints:^(MASConstraintMaker* make) {
-        make.top.equalTo(_secondLineLabel.mas_bottom).offset(SIZE_HEIGHT * 0.01);
-        make.height.equalTo(@(SIZE_HEIGHT * 0.02));
-        make.centerX.equalTo(_startLabel.mas_centerX).offset(0);
-        make.width.equalTo(@(SIZE_WIDTH * 0.5));
-    }];
-    
-    [pickerProcessCell addSubview:_scanQRCodesButton];
-    [_scanQRCodesButton mas_makeConstraints:^(MASConstraintMaker* make) {
-        make.centerY.equalTo(pickerProcessCell.mas_centerY).offset(0);
-        make.height.equalTo(@(SIZE_HEIGHT * 0.15));
-        make.right.equalTo(pickerProcessCell.mas_right).offset(-SIZE_WIDTH * 0.03);
-        make.width.equalTo(@(SIZE_HEIGHT * 0.15));
-    }];
-    
-    return pickerProcessCell;
+    UITableViewCell* normalCell = [_mainKidTableView dequeueReusableCellWithIdentifier:@"normal" forIndexPath:indexPath];
+    return normalCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -305,42 +230,12 @@
     if (tableView.tag == 401) {
         _selectedArrayNumber = indexPath.row;
         //创建通知
-        NSNotification *notification = [NSNotification notificationWithName:@"SelectedKidNameListTableViewCell" object:indexPath userInfo:nil];
+        NSNotification *notification = [NSNotification notificationWithName:@"SelectedParentKidNameListTableViewCell" object:indexPath userInfo:nil];
         //通过通知中心发送通知
         [[NSNotificationCenter defaultCenter] postNotification:notification];
         
-//    } else if (indexPath.row == 3) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"eventHandlingCell" object:nil];
     }
 }
 
-//判断正在接送的kid的状态
-- (void)judgeKidsPickingState:(NSString*)state {
-    if ([state isEqualToString:@"schooling"]) {
-        _movingSchoolLabel.hidden = NO;
-        _movingHomeLabel.hidden = YES;
-        _arriveSchoolLabel.hidden = YES;
-        _arriveHomeLabel.hidden = YES;
-        _secondLineLabel.hidden = YES;
-        _movingSchoolLabel.textColor = [UIColor redColor];
-        _movingHomeLabel.textColor = [UIColor grayColor];
-    } else if ([state isEqualToString:@"homing"]){
-        _movingSchoolLabel.hidden = YES;
-        _movingHomeLabel.hidden = NO;
-        _arriveSchoolLabel.hidden = NO;
-        _arriveHomeLabel.hidden = YES;
-        _secondLineLabel.hidden = NO;
-        _movingHomeLabel.textColor = [UIColor redColor];
-        _movingSchoolLabel.textColor = [UIColor grayColor];
-    } else if ([state isEqualToString:@"arrive"]){
-        _movingSchoolLabel.hidden = YES;
-        _movingHomeLabel.hidden = YES;
-        _arriveSchoolLabel.hidden = NO;
-        _arriveHomeLabel.hidden = NO;
-        _secondLineLabel.hidden = NO;
-        _movingHomeLabel.textColor = [UIColor grayColor];
-        _movingSchoolLabel.textColor = [UIColor grayColor];
-    }
-}
 
 @end

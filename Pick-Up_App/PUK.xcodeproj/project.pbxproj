@@ -21,6 +21,12 @@
 		043E9BBE27CA746200400724 /* retrievePassword.png in Resources */ = {isa = PBXBuildFile; fileRef = 043E9BBD27CA746200400724 /* retrievePassword.png */; };
 		043E9BC827CA753200400724 /* RetrievePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E9BC727CA753200400724 /* RetrievePasswordViewController.m */; };
 		043E9BCE27CA754200400724 /* RetrievePasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E9BCD27CA754200400724 /* RetrievePasswordView.m */; };
+		043E9BD727DB389F00400724 /* AccountManagementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E9BD627DB389F00400724 /* AccountManagementView.m */; };
+		043E9BDD27DB38B600400724 /* AccountManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E9BDC27DB38B600400724 /* AccountManagementViewController.m */; };
+		043E9BE627DCC5D100400724 /* KidStateCheckingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E9BE527DCC5D100400724 /* KidStateCheckingView.m */; };
+		043E9C3527E07B9400400724 /* saomaqueren.png in Resources */ = {isa = PBXBuildFile; fileRef = 043E9C3427E07B9400400724 /* saomaqueren.png */; };
+		043E9C3D27E10ABC00400724 /* daodiansaomaqueren.png in Resources */ = {isa = PBXBuildFile; fileRef = 043E9C3C27E10ABC00400724 /* daodiansaomaqueren.png */; };
+		043E9C8E27E114E700400724 /* ParentSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E9C8D27E114E700400724 /* ParentSettingView.m */; };
 		0446F5F627C3DEB200320478 /* fanhui111.png in Resources */ = {isa = PBXBuildFile; fileRef = 0446F5F527C3DEB200320478 /* fanhui111.png */; };
 		0446F60627C3DF1800320478 /* PUKLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0446F60327C3DF1700320478 /* PUKLogo.png */; };
 		0446F60727C3DF1800320478 /* backgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0446F60427C3DF1800320478 /* backgroundImage.jpg */; };
@@ -108,6 +114,16 @@
 		043E9BC727CA753200400724 /* RetrievePasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RetrievePasswordViewController.m; sourceTree = "<group>"; };
 		043E9BCC27CA754200400724 /* RetrievePasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RetrievePasswordView.h; sourceTree = "<group>"; };
 		043E9BCD27CA754200400724 /* RetrievePasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RetrievePasswordView.m; sourceTree = "<group>"; };
+		043E9BD527DB389F00400724 /* AccountManagementView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountManagementView.h; sourceTree = "<group>"; };
+		043E9BD627DB389F00400724 /* AccountManagementView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountManagementView.m; sourceTree = "<group>"; };
+		043E9BDB27DB38B600400724 /* AccountManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountManagementViewController.h; sourceTree = "<group>"; };
+		043E9BDC27DB38B600400724 /* AccountManagementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountManagementViewController.m; sourceTree = "<group>"; };
+		043E9BE427DCC5D100400724 /* KidStateCheckingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KidStateCheckingView.h; path = PUK/Picker/Setting/Controller/KidStateCheckingView.h; sourceTree = SOURCE_ROOT; };
+		043E9BE527DCC5D100400724 /* KidStateCheckingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KidStateCheckingView.m; path = PUK/Picker/Setting/Controller/KidStateCheckingView.m; sourceTree = SOURCE_ROOT; };
+		043E9C3427E07B9400400724 /* saomaqueren.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saomaqueren.png; sourceTree = "<group>"; };
+		043E9C3C27E10ABC00400724 /* daodiansaomaqueren.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daodiansaomaqueren.png; sourceTree = "<group>"; };
+		043E9C8C27E114E700400724 /* ParentSettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParentSettingView.h; sourceTree = "<group>"; };
+		043E9C8D27E114E700400724 /* ParentSettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParentSettingView.m; sourceTree = "<group>"; };
 		0446F5F527C3DEB200320478 /* fanhui111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fanhui111.png; sourceTree = "<group>"; };
 		0446F60327C3DF1700320478 /* PUKLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PUKLogo.png; sourceTree = "<group>"; };
 		0446F60427C3DF1800320478 /* backgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundImage.jpg; sourceTree = "<group>"; };
@@ -303,6 +319,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		043E9C8B27E114D600400724 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				043E9C8C27E114E700400724 /* ParentSettingView.h */,
+				043E9C8D27E114E700400724 /* ParentSettingView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		22BA1296A2479DABA1666CE0 /* Frameworks */ = {
@@ -556,6 +581,8 @@
 			children = (
 				BCB5B252279C002C007B78E2 /* PickerSettingViewController.h */,
 				BCB5B253279C002C007B78E2 /* PickerSettingViewController.m */,
+				043E9BDB27DB38B600400724 /* AccountManagementViewController.h */,
+				043E9BDC27DB38B600400724 /* AccountManagementViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -565,6 +592,8 @@
 			children = (
 				BC991A2227AFB03000473A8A /* PickerSettingView.h */,
 				BC991A2327AFB03000473A8A /* PickerSettingView.m */,
+				043E9BD527DB389F00400724 /* AccountManagementView.h */,
+				043E9BD627DB389F00400724 /* AccountManagementView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -612,7 +641,7 @@
 			isa = PBXGroup;
 			children = (
 				BCB5B273279C068D007B78E2 /* Model */,
-				BCB5B272279C0688007B78E2 /* View */,
+				043E9C8B27E114D600400724 /* View */,
 				BCB5B271279C0682007B78E2 /* Controller */,
 			);
 			path = Setting;
@@ -640,6 +669,8 @@
 		BCB5B25F279C052B007B78E2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				043E9BE427DCC5D100400724 /* KidStateCheckingView.h */,
+				043E9BE527DCC5D100400724 /* KidStateCheckingView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -718,13 +749,6 @@
 				BCB5B275279C06B0007B78E2 /* ParentSettingViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		BCB5B272279C0688007B78E2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		BCB5B273279C068D007B78E2 /* Model */ = {
@@ -899,6 +923,7 @@
 		BCB5B29B279C86B3007B78E2 /* Picker */ = {
 			isa = PBXGroup;
 			children = (
+				043E9C3C27E10ABC00400724 /* daodiansaomaqueren.png */,
 				0446F5F527C3DEB200320478 /* fanhui111.png */,
 				BC991A0E27AFAD8600473A8A /* pic10.jpg */,
 				BC991A1427AFAD8F00473A8A /* pic1.jpg */,
@@ -910,6 +935,7 @@
 				BC991A1D27AFAD9500473A8A /* laba.png */,
 				BC991A1C27AFAD9500473A8A /* shouqi.png */,
 				BC991A1A27AFAD9500473A8A /* zhankai.png */,
+				043E9C3427E07B9400400724 /* saomaqueren.png */,
 			);
 			path = Picker;
 			sourceTree = "<group>";
@@ -1048,9 +1074,11 @@
 				043E9BAB27C7DD6200400724 /* fanhui.png in Resources */,
 				BC991A0F27AFAD8700473A8A /* pic10.jpg in Resources */,
 				04315E81277F53B600C52338 /* Assets.xcassets in Resources */,
+				043E9C3D27E10ABC00400724 /* daodiansaomaqueren.png in Resources */,
 				043E9BB627CA70F300400724 /* signUp.png in Resources */,
 				0446F60627C3DF1800320478 /* PUKLogo.png in Resources */,
 				043E9BBE27CA746200400724 /* retrievePassword.png in Resources */,
+				043E9C3527E07B9400400724 /* saomaqueren.png in Resources */,
 				BC991A1E27AFAD9500473A8A /* zhankai.png in Resources */,
 				04315E7F277F53B200C52338 /* Main.storyboard in Resources */,
 			);
@@ -1122,10 +1150,13 @@
 				BCB5B298279C7FE3007B78E2 /* TeacherSettingViewController.m in Sources */,
 				BC9919FF27AC56E700473A8A /* ScanQRCodeViewController.m in Sources */,
 				BCB5B238279BDBA1007B78E2 /* SignUpView.m in Sources */,
+				043E9BD727DB389F00400724 /* AccountManagementView.m in Sources */,
 				BCB5B295279C7FCE007B78E2 /* SchoolInformationEditingViewController.m in Sources */,
 				BCB5B249279BFAA0007B78E2 /* EventCheckingViewController.m in Sources */,
+				043E9BDD27DB38B600400724 /* AccountManagementViewController.m in Sources */,
 				BC9919F927AC479300473A8A /* SpecificEventViewController.m in Sources */,
 				043E9BC827CA753200400724 /* RetrievePasswordViewController.m in Sources */,
+				043E9BE627DCC5D100400724 /* KidStateCheckingView.m in Sources */,
 				BC991A2A27AFB13F00473A8A /* SchoolInformationNewsTableViewCell.m in Sources */,
 				BCB5B235279BDA1F007B78E2 /* SignInViewController.m in Sources */,
 				BCB5B276279C06B0007B78E2 /* ParentSettingViewController.m in Sources */,
@@ -1137,6 +1168,7 @@
 				BC991A0227AC623C00473A8A /* ConfirmNumericalCodeViewController.m in Sources */,
 				04315E76277F53B200C52338 /* AppDelegate.m in Sources */,
 				BCB5B263279C0556007B78E2 /* KidStateCheckingViewController.m in Sources */,
+				043E9C8E27E114E700400724 /* ParentSettingView.m in Sources */,
 				BC9919FC27AC4C9700473A8A /* SpecificEventView.m in Sources */,
 				BC991A0727AE3CF300473A8A /* BaseScanViewController.m in Sources */,
 				04315E87277F53B600C52338 /* main.m in Sources */,

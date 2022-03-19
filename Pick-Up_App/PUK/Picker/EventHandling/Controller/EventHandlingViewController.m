@@ -25,6 +25,7 @@
     
     _eventHandlingView = [[EventHandlingView alloc] initWithFrame:self.view.frame];
     [_eventHandlingView.kidNameListButton addTarget:self action:@selector(pressKidNameListButton) forControlEvents:UIControlEventTouchUpInside];
+    [_eventHandlingView.scanQRCodesButton addTarget:self action:@selector(pressEventHandlingCell) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_eventHandlingView];
     
 //    CreatQRCodeViewController *scanGUIOne = [[CreatQRCodeViewController alloc] init];

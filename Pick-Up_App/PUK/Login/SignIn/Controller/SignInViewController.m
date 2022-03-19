@@ -39,7 +39,7 @@
     [_signInView.tapGesturRecognizer addTarget:self action:@selector(pressLoginButton:)];
     _signInView.loginButtonTimer = [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(loginButtonTimerAutoRepeat) userInfo:nil repeats:YES];
     _signInView.loginArrowTimer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(loginArrowTimerAutoRepeat) userInfo:nil repeats:YES];
-    //_loginTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(loginAnimation) userInfo:nil repeats:NO];
+    //_loginTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(loginAnimation) userInfo:nil repeats:NO];
     [self.view addSubview:_signInView];
     [self loginAnimation];
 
@@ -115,25 +115,26 @@
             UINavigationController *handle = [[UINavigationController alloc] initWithRootViewController:pickerEventHandlingViewController];
             UINavigationController *check = [[UINavigationController alloc] initWithRootViewController:pickerEventCheckingViewController];
             UINavigationController *setting = [[UINavigationController alloc] initWithRootViewController:pickerSettingViewController];
+            
             handle.title = @"处理接送事件";
             check.title = @"查看接送事件";
             setting.title = @"我的";
-            handle.navigationBar.hidden = YES;
-            check.navigationBar.hidden = YES;
-            setting.navigationBar.hidden = YES;
+            handle.navigationBarHidden = YES;
+            check.navigationBarHidden = YES;
+            setting.navigationBarHidden = NO;
 
             NSArray* controllerArray = [NSArray arrayWithObjects:handle, check, setting, nil];
             UITabBarController* tabBarController = [[UITabBarController alloc] init];
             tabBarController.viewControllers = controllerArray;
             tabBarController.tabBar.tintColor = [UIColor colorWithRed:0.2 green:0.6 blue:0.9 alpha:1];
             tabBarController.tabBar.barTintColor = [UIColor whiteColor];
-            tabBarController.tabBar.translucent = YES;
+            tabBarController.tabBar.translucent = NO;
             
             UIWindow* window = [UIApplication sharedApplication].windows[0];
 
-            [UIView transitionFromView:self.signInView toView:tabBarController.view duration:0.5f options:UIViewAnimationOptionTransitionCrossDissolve completion:^(BOOL finished) {
+//            [UIView transitionFromView:self.signInView toView:tabBarController.view duration:0.5f options:UIViewAnimationOptionTransitionCrossDissolve completion:^(BOOL finished) {
                     window.rootViewController = tabBarController;
-            }];
+           // }];
         } else if ([self.signInView.usernameTextField.text isEqualToString:@"2"]) {
             KidStateCheckingViewController *kidStateViewController = [[KidStateCheckingViewController alloc] init];
             EditingMenuViewController *editingMenuViewController = [[EditingMenuViewController alloc] init];
@@ -144,26 +145,28 @@
             UINavigationController *eventEditing = [[UINavigationController alloc] initWithRootViewController:editingMenuViewController];
             UINavigationController *schoolInformation = [[UINavigationController alloc] initWithRootViewController:schoolInformationViewController];
             UINavigationController *setting = [[UINavigationController alloc] initWithRootViewController:parentSettingViewController];
+            
             kidState.title = @"孩子当前状态";
             eventEditing.title = @"编辑接送事件";
             schoolInformation.title = @"学校信息";
             setting.title = @"我的";
+            
             kidState.navigationBar.hidden = YES;
             eventEditing.navigationBar.hidden = YES;
             schoolInformation.navigationBar.hidden = YES;
-            setting.navigationBar.hidden = YES;
+            setting.navigationBar.hidden = NO;
             
             NSArray* controllerArray = [NSArray arrayWithObjects:kidState, eventEditing, schoolInformation, setting, nil];
             UITabBarController* tabBarController = [[UITabBarController alloc] init];
             tabBarController.viewControllers = controllerArray;
-            tabBarController.tabBar.tintColor = [UIColor colorWithRed:0.2 green:0.6 blue:0.9 alpha:1];
+            tabBarController.tabBar.tintColor = [UIColor colorWithRed:0.7 green:0.5 blue:0.2 alpha:1];
             tabBarController.tabBar.barTintColor = [UIColor whiteColor];
-            tabBarController.tabBar.translucent = YES;
+            tabBarController.tabBar.translucent = NO;
             
             UIWindow* window = [UIApplication sharedApplication].windows[0];
-            [UIView transitionFromView:self.signInView toView:tabBarController.view duration:0.5f options:UIViewAnimationOptionTransitionCrossDissolve completion:^(BOOL finished) {
+//            [UIView transitionFromView:self.signInView toView:tabBarController.view duration:0.5f options:UIViewAnimationOptionTransitionCrossDissolve completion:^(BOOL finished) {
                     window.rootViewController = tabBarController;
-            }];
+//            }];
             
         } else if ([self.signInView.usernameTextField.text isEqualToString:@"3"]) {
             KidStateEditingViewController *kidStateEditingViewController = [[KidStateEditingViewController alloc] init];
@@ -181,7 +184,6 @@
             information.title = @"编辑学校信息";
             setting.title = @"我的";
             
-            setting.navigationBar.hidden = YES;
             eventConfirm.navigationBar.hidden = YES;
             information.navigationBar.hidden = YES;
             setting.navigationBar.hidden = YES;

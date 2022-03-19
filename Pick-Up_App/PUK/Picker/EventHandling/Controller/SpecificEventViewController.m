@@ -20,7 +20,7 @@
     self.view.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1];
     
     [self.navigationController setNavigationBarHidden:NO animated:NO];
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"fanhui111.png"] style:UIBarButtonItemStylePlain target:self action:@selector(pressBack)];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"fanhui.png"] style:UIBarButtonItemStylePlain target:self action:@selector(pressBack)];
     self.navigationItem.leftBarButtonItem = backButton;
     
     _specificEventView = [[SpecificEventView alloc] initWithFrame:self.view.frame];

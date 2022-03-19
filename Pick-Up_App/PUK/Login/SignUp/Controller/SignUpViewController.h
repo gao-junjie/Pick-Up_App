@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) SignUpView *signUpView;
 @property (nonatomic, strong) SignInViewController *signInViewController;
+@property (nonatomic, strong) NSString* phoneValidationString;
+@property (nonatomic, strong) NSString* phoneNumberString;
+@property (nonatomic, strong) NSString* phoneJudgeValidationString;
 
 @end
 

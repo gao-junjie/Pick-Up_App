@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _phoneValidationString = @"no";
+    
     _signUpView = [[SignUpView alloc] initWithFrame:self.view.frame];
     [_signUpView.signUpReturnButton addTarget:self action:@selector(pressSignUpReturnButton) forControlEvents:UIControlEventTouchUpInside];
     [_signUpView.signUpNextButton addTarget:self action:@selector(pressSignUpNextButton) forControlEvents:UIControlEventTouchUpInside];
@@ -31,6 +33,8 @@
 
 //验证码倒计时
 - (void)pressVerificationCodeButton {
+    _phoneNumberString = _signUpView.phoneNumberTextField.text;
+    [self toPostValidationNetWork];
     self.signUpView.countTimerNumberDown = 60;
     self.signUpView.verificationCodeButton.userInteractionEnabled = NO;
     [self.signUpView.verificationCodeButton setTitle:[NSString stringWithFormat:@"%lds后重发",self.signUpView.countTimerNumberDown] forState:UIControlStateNormal];
@@ -53,20 +57,11 @@
     
 }
 
+//第一次点击下一步
 - (void)pressSignUpNextButton {
-    [self.signUpView.countDownTimer invalidate];
-    self.signUpView.verificationCodeButton.hidden = YES;
-    self.signUpView.validationTextField.hidden = YES;
-    self.signUpView.phoneNumberTextField.hidden = YES;
-    self.signUpView.validationLabel.hidden = YES;
-    self.signUpView.phoneNumberLabel.hidden = YES;
-    self.signUpView.signUpNextButton.hidden = YES;
-    [self.signUpView addNextView];
-    self.signUpView.nameNextTextField.delegate = self;
-    [_signUpView.selectPickerButton addTarget:self action:@selector(pressSelectPickerButton) forControlEvents:UIControlEventTouchUpInside];
-    [_signUpView.selectParentButton addTarget:self action:@selector(pressSelectParentButton) forControlEvents:UIControlEventTouchUpInside];
-    [_signUpView.selectTeacherButton addTarget:self action:@selector(pressSelectTeacherButton) forControlEvents:UIControlEventTouchUpInside];
-    [_signUpView.signUpNextTwiceButton addTarget:self action:@selector(pressSignUpNextTwiceButton) forControlEvents:UIControlEventTouchUpInside];
+    _phoneValidationString = _signUpView.validationTextField.text;
+    [self toPostJudgeValidationNetwrok];
+    
 }
 
 - (void)pressSignUpNextTwiceButton {
@@ -117,7 +112,8 @@
     }
 }
 
-- (BOOL) deptNameInputShouldChinese {
+//判断字符串是否是全中文
+- (BOOL)deptNameInputShouldChinese {
     NSString *regex = @"[\u4e00-\u9fa5]+";
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
     if (![pred evaluateWithObject:self.signUpView.nameNextTextField.text]) {
@@ -139,9 +135,150 @@
             self.signUpView.wrongNameAlertLabel.hidden = NO;
         }
     }
-    
-
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.signUpView.nameNextTextField resignFirstResponder];
+    [self.signUpView.validationTextField resignFirstResponder];
+    [self.signUpView.phoneNumberTextField resignFirstResponder];
+    [self.signUpView.passwordNextTextField resignFirstResponder];
+}
+
+//检验短信验证码是否正确
+- (void)judgeValidation:(NSString*)judge :(NSString*)phoneNumber {
+    if ([judge isEqualToString:@"yes"] && [phoneNumber isEqualToString:_signUpView.phoneNumberTextField.text]) {
+        [self.signUpView.countDownTimer invalidate];
+        self.signUpView.verificationCodeButton.hidden = YES;
+        self.signUpView.validationTextField.hidden = YES;
+        self.signUpView.phoneNumberTextField.hidden = YES;
+        self.signUpView.validationLabel.hidden = YES;
+        self.signUpView.phoneNumberLabel.hidden = YES;
+        self.signUpView.signUpNextButton.hidden = YES;
+        [self.signUpView addNextView];
+        self.signUpView.nameNextTextField.delegate = self;
+        [_signUpView.selectPickerButton addTarget:self action:@selector(pressSelectPickerButton) forControlEvents:UIControlEventTouchUpInside];
+        [_signUpView.selectParentButton addTarget:self action:@selector(pressSelectParentButton) forControlEvents:UIControlEventTouchUpInside];
+        [_signUpView.selectTeacherButton addTarget:self action:@selector(pressSelectTeacherButton) forControlEvents:UIControlEventTouchUpInside];
+        [_signUpView.signUpNextTwiceButton addTarget:self action:@selector(pressSignUpNextTwiceButton) forControlEvents:UIControlEventTouchUpInside];
+    } else {
+        UIAlertController* boomAlert = [UIAlertController alertControllerWithTitle:@"警告" message:@"验证码错误" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *boomAction= [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+            
+        }];
+        [boomAlert addAction:boomAction];
+        [self presentViewController:boomAlert animated:YES completion:nil];
+    }
+}
+
+- (void)toPostJudgeValidationNetwrok {
+    //1.创建会话对象
+    NSURLSession *session = [NSURLSession sharedSession];
+
+        //2.根据会话对象创建task
+        NSURL *url = [NSURL URLWithString:@"http://192.168.3.175:8080/judge"];
+        
+        //3.创建可变的请求对象
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        
+        //4.修改请求方法为POST
+        request.HTTPMethod = @"POST";
+        // 设置请求头类型 (因为发送给服务器的参数类型已经不是普通数据,而是JSON)
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        //5.设置请求体
+        NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+        parameters[@"validationString"] = _phoneValidationString;
+        NSData *data = [NSJSONSerialization dataWithJSONObject:parameters options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        request.HTTPBody = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        //request.HTTPBody = data;
+    
+        //6.根据会话对象创建一个Task(发送请求）
+        /*
+         第一个参数：请求对象
+         第二个参数：completionHandler回调（请求完成【成功|失败】的回调）
+         data：响应体信息（期望的数据）
+         response：响应头信息，主要是对服务器端的描述
+         error：错误信息，如果请求失败，则error有值
+         */
+        
+        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (!error) {
+                //8.解析数据
+                self.phoneJudgeValidationString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                
+                // 异步执行任务创建方法
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self judgeValidation:self.phoneJudgeValidationString :self.phoneNumberString];
+                });
+            } else {
+                //NSLog(@"%@",error);
+                //添加网络错误警告
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self addInternetWrongView];
+                });
+                
+                
+            }
+        }];
+
+        //7.执行任务
+        [dataTask resume];
+}
+
+- (void)toPostValidationNetWork {
+    //1.创建会话对象
+        NSURLSession *session = [NSURLSession sharedSession];
+
+        //2.根据会话对象创建task
+        NSURL *url = [NSURL URLWithString:@"http://192.168.3.175:8080/phone"];
+        
+        //3.创建可变的请求对象
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        
+        //4.修改请求方法为POST
+        request.HTTPMethod = @"POST";
+        // 设置请求头类型 (因为发送给服务器的参数类型已经不是普通数据,而是JSON)
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        //5.设置请求体
+        NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+        parameters[@"userPhoneNumber"] = _signUpView.phoneNumberTextField.text;
+        NSData *data = [NSJSONSerialization dataWithJSONObject:parameters options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        request.HTTPBody = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    
+        //6.根据会话对象创建一个Task(发送请求）
+        /*
+         第一个参数：请求对象
+         第二个参数：completionHandler回调（请求完成【成功|失败】的回调）
+         data：响应体信息（期望的数据）
+         response：响应头信息，主要是对服务器端的描述
+         error：错误信息，如果请求失败，则error有值
+         */
+        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (!error) {
+                //8.解析数据
+                //NSLog(@"%@",dict);
+            } else {
+                //NSLog(@"%@",error);
+                //添加网络错误警告
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self addInternetWrongView];
+                });
+            }
+        }];
+
+        //7.执行任务
+        [dataTask resume];
+}
+
+- (void)addInternetWrongView {
+    NSLog(@"网络错误");
+    UIAlertController* boomAlert = [UIAlertController alertControllerWithTitle:@"警告" message:@"网络错误" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *boomAction= [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        
+    }];
+    [boomAlert addAction:boomAction];
+    [self presentViewController:boomAlert animated:YES completion:nil];
+}
 
 @end

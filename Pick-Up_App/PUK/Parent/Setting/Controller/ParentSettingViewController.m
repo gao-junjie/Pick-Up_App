@@ -6,6 +6,7 @@
 //
 
 #import "ParentSettingViewController.h"
+#import "AccountManagementViewController.h"
 
 @interface ParentSettingViewController ()
 
@@ -15,17 +16,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationItem.title = @"我的";
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.7 green:0.5 blue:0.2 alpha:1];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parentSettingNotificationCenter:)name:@"ParentSetting" object:nil];
+    
+    _parentSettingView = [[ParentSettingView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:_parentSettingView];
 }
 
-/*
-#pragma mark - Navigation
+- (void)parentSettingNotificationCenter:(NSNotification *)text {
+    if ([text.object isEqualToString:@"0"]) {
+        
+    } else if ([text.object isEqualToString:@"1"]) {
+        AccountManagementViewController* accountManagementViewController = [[AccountManagementViewController alloc] init];
+        [self.navigationController pushViewController:accountManagementViewController animated:YES];
+    } else if ([text.object isEqualToString:@"2"]) {
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    } else if ([text.object isEqualToString:@"3"]) {
+
+    }
+    
 }
-*/
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"PickerSetting" object:self];
+}
 
 @end

@@ -103,7 +103,7 @@
     [_usernameTextField mas_makeConstraints:^(MASConstraintMaker* make) {
         make.top.equalTo(self.usernameLabel.mas_top).offset(SIZE_HEIGHT*0.003);
         make.height.equalTo(@(SIZE_HEIGHT * 0.045));
-        make.centerX.equalTo(self.mas_centerX).offset(-SIZE_WIDTH * 0.81);
+        make.centerX.equalTo(self.mas_centerX).offset(SIZE_WIDTH * 0.81);
         make.width.equalTo(@(SIZE_WIDTH * 0.62));
     }];
     
